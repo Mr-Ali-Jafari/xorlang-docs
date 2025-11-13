@@ -1,119 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>عیب‌یابی و کدهای خطا - XorLang</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">🔥</span>
-                <span class="logo-text">XorLang</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">خانه</a></li>
-                <li><a href="tutorials.html" class="nav-link">آموزش‌ها</a></li>
-                <li><a href="api.html" class="nav-link">مرجع API</a></li>
-                <li><a href="troubleshooting.html" class="nav-link active">عیب‌یابی</a></li>
-                <li><a href="faq.html" class="nav-link">سوالات متداول</a></li>
-                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">
-                <span class="gradient-text">عیب‌یابی</span>
-                <br>راهنمای حل مشکلات
-            </h1>
-            <p class="hero-subtitle">
-                راهنمای کامل برای حل مشکلات رایج XorLang
-            </p>
-        </div>
-    </section>
-
-    <!-- Error Categories -->
-    <section class="error-categories">
-        <div class="container">
-            <div class="category-nav">
-                <button class="category-btn active" data-category="compile">🔧 کامپایل</button>
-                <button class="category-btn" data-category="runtime">⚡ اجرا</button>
-                <button class="category-btn" data-category="syntax">📝 نحو</button>
-                <button class="category-btn" data-category="library">📚 کتابخانه</button>
-            </div>
-
-            <!-- Compile Errors -->
-            <div id="compile" class="error-category active">
-                <h2>🔧 خطاهای کامپایل</h2>
-                
-                <div class="error-card">
-                    <h3>❌ خطای E001: فایل پیدا نشد</h3>
-                    <div class="error-message">
-                        <code>Error: Could not open file 'program.xor'</code>
-                    </div>
-                    <div class="error-solution">
-                        <h4>راه حل:</h4>
-                        <ul>
-                            <li>مسیر فایل را بررسی کنید</li>
-                            <li>مطمئن شوید فایل وجود دارد</li>
-                            <li>دسترسی‌های فایل را چک کنید</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="error-card">
-                    <h3>❌ خطای E002: وابستگی‌ها نصب نیست</h3>
-                    <div class="error-message">
-                        <code>Error: libcurl not found</code>
-                    </div>
-                    <div class="error-solution">
-                        <h4>راه حل:</h4>
-                        <pre><code>sudo apt-get install libcurl4-openssl-dev</code></pre>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Runtime Errors -->
-            <div id="runtime" class="error-category">
-                <h2>⚡ خطاهای اجرا</h2>
-                
-                <div class="error-card">
-                    <h3>❌ خطای R001: تقسیم بر صفر</h3>
-                    <div class="error-message">
-                        <code>Runtime Error: Division by zero</code>
-                    </div>
-                    <div class="error-solution">
-                        <h4>راه حل:</h4>
-                        <p>از تابع <code>safe_divide</code> استفاده کنید:</p>
-                        <pre><code>bucket result = safe_divide(10, 0); // برمی‌گرداند 0</code></pre>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>XorLang</h3>
-                    <p>زبان برنامه‌نویسی مدرن برای توسعه‌دهندگان فارسی‌زبان</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; ۲۰۲۴ XorLang - ساخته شده توسط <strong>علی جعفری</strong></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>

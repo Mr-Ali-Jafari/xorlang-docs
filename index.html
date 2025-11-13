@@ -1,349 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>XorLang - زبان برنامه‌نویسی مدرن</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">🔥</span>
-                <span class="logo-text">XorLang</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link">خانه</a></li>
-                <li><a href="tutorials.html" class="nav-link">آموزش‌ها</a></li>
-                <li><a href="api.html" class="nav-link">مرجع API</a></li>
-                <li><a href="examples.html" class="nav-link">مثال‌ها</a></li>
-                <li><a href="faq.html" class="nav-link">سوالات متداول</a></li>
-                <li><a href="about.html" class="nav-link">درباره ما</a></li>
-                <li><a href="contributing.html" class="nav-link">مشارکت</a></li>
-                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <span class="gradient-text">XorLang</span>
-                    <br>زبان برنامه‌نویسی مدرن
-                </h1>
-                <p class="hero-subtitle">
-                    زبان برنامه‌نویسی کامپایل شده با syntax فارسی و قابلیت‌های پیشرفته
-                </p>
-                <div class="hero-buttons">
-                    <a href="#download" class="btn btn-primary">
-                        <span>🚀</span> شروع کنید
-                    </a>
-                    <a href="#docs" class="btn btn-secondary">
-                        <span>📚</span> مستندات
-                    </a>
-                    <a href="https://xorix.ir/donate" target="_blank" class="btn btn-donate">
-                        <span>❤️</span> حمایت مالی
-                    </a>
-                </div>
-            </div>
-            <div class="hero-code">
-                <div class="code-window">
-                    <div class="code-header">
-                        <div class="code-dots">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                        <span class="code-title">hello.xor</span>
-                    </div>
-                    <pre><code class="language-xorlang">bucket name = ask('نام شما چیست؟ ');
-show('سلام ' + name + '!');
-
-putlib math_sqrt from math;
-bucket result = math_sqrt(25);
-show('جذر 25 برابر است با: ' + result);</code></pre>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">ویژگی‌های کلیدی</h2>
-            <div class="status-badges">
-                <span class="badge badge-success">✅ آزمایش جامع انجام شده</span>
-                <span class="badge badge-success">✅ آماده تولید</span>
-                <span class="badge badge-info">🚀 50+ تابع کارآمد</span>
-            </div>
-            <div class="features-grid">
-                <div class="feature-card feature-working">
-                    <div class="feature-icon">🚀</div>
-                    <h3>کامپایلر سریع ✅</h3>
-                    <p>تولید کد C بهینه و اجرای سریع برنامه‌ها</p>
-                </div>
-                <div class="feature-card feature-working">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Syntax فارسی ✅</h3>
-                    <p>استفاده از کلمات فارسی برای راحتی برنامه‌نویسی</p>
-                </div>
-                <div class="feature-card feature-working">
-                    <div class="feature-icon">📚</div>
-                    <h3>کتابخانه کامل ✅</h3>
-                    <p>50+ تابع آزمایش شده: Math, String, File, Time, System, Network</p>
-                </div>
-                <div class="feature-card feature-limited">
-                    <div class="feature-icon">🔗</div>
-                    <h3>سیستم Import ⚠️</h3>
-                    <p>فقط parsing - symbol resolution در حال توسعه</p>
-                </div>
-                <div class="feature-card feature-working">
-                    <div class="feature-icon">🌐</div>
-                    <h3>قابلیت شبکه ✅</h3>
-                    <p>HTTP GET/POST, دانلود فایل، بررسی اتصال - آزمایش شده</p>
-                </div>
-                <div class="feature-card feature-working">
-                    <div class="feature-icon">🛡️</div>
-                    <h3>مدیریت خطا ✅</h3>
-                    <p>عملیات امن و مدیریت هوشمند خطاها - آزمایش شده</p>
-                </div>
-                <div class="feature-card feature-working">
-                    <div class="feature-icon">🔄</div>
-                    <h3>برنامه‌های چند خطی ✅</h3>
-                    <p>پشتیبانی کامل از برنامه‌های پیچیده - آزمایش شده</p>
-                </div>
-                <div class="feature-card feature-working">
-                    <div class="feature-icon">🔀</div>
-                    <h3>ساختارهای کنترلی ✅</h3>
-                    <p>شرط‌ها، حلقه‌های while و حلقه‌های تودرتو - آزمایش شده</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Documentation Section -->
-    <section id="docs" class="docs">
-        <div class="container">
-            <h2 class="section-title">مستندات</h2>
-            <div class="docs-grid">
-                <div class="doc-category">
-                    <h3>🎓 یادگیری</h3>
-                    <div class="doc-links">
-                        <a href="tutorials.html">آموزش‌های گام به گام</a>
-                        <a href="examples.html">مثال‌های عملی</a>
-                        <a href="api.html">مرجع کامل API</a>
-                        <a href="faq.html">سوالات متداول</a>
-                    </div>
-                </div>
-                <div class="doc-category">
-                    <h3>📚 کتابخانه استاندارد</h3>
-                    <div class="doc-links">
-                        <a href="api.html#math">ماژول Math</a>
-                        <a href="api.html#string">ماژول String</a>
-                        <a href="api.html#file">ماژول File</a>
-                        <a href="api.html#time">ماژول Time</a>
-                        <a href="api.html#system">ماژول System</a>
-                        <a href="api.html#network">ماژول Network</a>
-                    </div>
-                </div>
-                <div class="doc-category">
-                    <h3>🤝 جامعه و پشتیبانی</h3>
-                    <div class="doc-links">
-                        <a href="about.html">درباره XorLang</a>
-                        <a href="contributing.html">راهنمای مشارکت</a>
-                        <a href="changelog.html">تغییرات و نقشه راه</a>
-                        <a href="troubleshooting.html">عیب‌یابی</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Examples Section -->
-    <section id="examples" class="examples">
-        <div class="container">
-            <h2 class="section-title">مثال‌های کاربردی</h2>
-            <div class="examples-tabs">
-                <button class="tab-btn active" data-tab="calculator">محاسبه‌گر</button>
-                <button class="tab-btn" data-tab="file-manager">مدیریت فایل</button>
-                <button class="tab-btn" data-tab="web-request">درخواست وب</button>
-                <button class="tab-btn" data-tab="array-processing">پردازش آرایه</button>
-            </div>
-            
-            <div class="tab-content active" id="calculator">
-                <pre><code class="language-xorlang">// محاسبه‌گر ساده
-bucket num1 = ask('عدد اول را وارد کنید: ');
-bucket num2 = ask('عدد دوم را وارد کنید: ');
-
-bucket sum = num1 + num2;
-bucket product = num1 * num2;
-bucket division = safe_divide(num1, num2);
-
-show('جمع: ' + sum);
-show('ضرب: ' + product);
-show('تقسیم: ' + division);</code></pre>
-            </div>
-
-            <div class="tab-content" id="file-manager">
-                <pre><code class="language-xorlang">// مدیریت فایل
-putlib file_write, file_read, file_exists from file;
-
-bucket content = 'این یک فایل تست است';
-file_write('data.txt', content);
-
-when if (file_exists('data.txt')) {
-    bucket data = file_read('data.txt');
-    show('محتوای فایل: ' + data);
-} when else {
-    show('فایل وجود ندارد');
-}</code></pre>
-            </div>
-
-            <div class="tab-content" id="web-request">
-                <pre><code class="language-xorlang">// درخواست HTTP
-putlib http_get, is_online from networking;
-
-when if (is_online()) {
-    bucket response = http_get('https://api.github.com');
-    show('پاسخ API: ' + response);
-} when else {
-    show('اتصال اینترنت موجود نیست');
-}</code></pre>
-            </div>
-
-            <div class="tab-content" id="array-processing">
-                <pre><code class="language-xorlang">// پردازش آرایه
-putlib math_max from math;
-
-bucket numbers[] = [5, 2, 8, 1, 9];
-bucket max_num = numbers[0];
-
-for loop (bucket i = 1; i < 5; i = i + 1) {
-    max_num = math_max(max_num, numbers[i]);
-}
-
-show('بزرگترین عدد: ' + max_num);</code></pre>
-            </div>
-        </div>
-    </section>
-
-    <!-- Download Section -->
-    <section id="download" class="download">
-        <div class="container">
-            <h2 class="section-title">دانلود و نصب</h2>
-            <div class="download-content">
-                <div class="download-info">
-                    <h3>نصب XorLang</h3>
-                    <p>XorLang را در سیستم لینوکس خود نصب کنید:</p>
-                    
-                    <div class="install-steps">
-                        <div class="step">
-                            <span class="step-number">1</span>
-                            <div class="step-content">
-                                <h4>نصب پیش‌نیازها</h4>
-                                <pre><code class="language-bash"># Ubuntu/Debian
-sudo apt-get install gcc libcurl4-openssl-dev
-
-# CentOS/RHEL
-sudo yum install gcc libcurl-devel</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="step">
-                            <span class="step-number">2</span>
-                            <div class="step-content">
-                                <h4>کامپایل XorLang</h4>
-                                <pre><code class="language-bash">cd xorlang
-make</code></pre>
-                            </div>
-                        </div>
-                        
-                        <div class="step">
-                            <span class="step-number">3</span>
-                            <div class="step-content">
-                                <h4>اجرای برنامه</h4>
-                                <pre><code class="language-bash">./xorlang program.xor
-./program.xor.out</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="download-buttons">
-                    <a href="#" class="btn btn-primary btn-large">
-                        <span>📦</span> دانلود XorLang
-                    </a>
-                    <p class="version-info">نسخه 1.0 - لینوکس</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>XorLang</h3>
-                    <p>زبان برنامه‌نویسی مدرن برای توسعه‌دهندگان ایرانی</p>
-                    <div class="social-links">
-                        <a href="https://xorix.ir/donate" target="_blank" class="social-link donate">
-                            <span>❤️</span> حمایت مالی
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>یادگیری</h4>
-                    <ul>
-                        <li><a href="tutorials.html">آموزش‌ها</a></li>
-                        <li><a href="examples.html">مثال‌ها</a></li>
-                        <li><a href="api.html">مرجع API</a></li>
-                        <li><a href="faq.html">سوالات متداول</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>جامعه</h4>
-                    <ul>
-                        <li><a href="about.html">درباره ما</a></li>
-                        <li><a href="contributing.html">مشارکت</a></li>
-                        <li><a href="changelog.html">تغییرات</a></li>
-                        <li><a href="troubleshooting.html">عیب‌یابی</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>منابع</h4>
-                    <ul>
-                        <li><a href="sitemap.html">نقشه سایت</a></li>
-                        <li><a href="https://github.com/mr-ali-jafari/xorlang" target="_blank">GitHub</a></li>
-                        <li><a href="https://xorix.ir/donate" target="_blank">حمایت مالی</a></li>
-                        <li><a href="index-en.html">English</a></li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 XorLang - ساخته شده توسط <strong>علی جعفری</strong></p>
-                <p>تحت مجوز MIT منتشر شده است</p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
-</html>

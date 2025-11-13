@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آموزش XorLang - از مبتدی تا پیشرفته</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Vazirmatn', sans-serif; background: #0a0a0a; color: #e0e0e0; }
+        .container { display: flex; min-height: 100vh; }
+        .sidebar { width: 300px; background: #1a1a1a; border-right: 1px solid #333; padding: 20px; position: fixed; height: 100vh; overflow-y: auto; }
+        .content { margin-right: 300px; padding: 20px; flex: 1; }
+        .sidebar h2 { color: #00d4ff; margin-bottom: 20px; }
+        .sidebar ul { list-style: none; }
+        .sidebar li { margin: 10px 0; }
+        .sidebar a { color: #ccc; text-decoration: none; padding: 8px 12px; display: block; border-radius: 5px; transition: all 0.3s; }
+        .sidebar a:hover, .sidebar a.active { background: #333; color: #00d4ff; }
+        .section { display: none; }
+        .section.active { display: block; }
+        h1 { color: #00d4ff; margin-bottom: 20px; }
+        h2 { color: #ff6b35; margin: 30px 0 15px; }
+        h3 { color: #4ecdc4; margin: 20px 0 10px; }
+        pre { background: #1e1e1e; padding: 15px; border-radius: 8px; overflow-x: auto; margin: 10px 0; }
+        code { color: #00ff88; }
+        .note { background: #2d1b69; border-left: 4px solid #8b5cf6; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .example { background: #1a2332; border-left: 4px solid #00d4ff; padding: 15px; margin: 15px 0; border-radius: 5px; }
+        .warning { background: #332d1b; border-left: 4px solid #ffaa00; padding: 15px; margin: 15px 0; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>🔥 آموزش XorLang</h2>
+            <ul>
+                <li><a href="#install" class="nav-link active">نصب و راه‌اندازی</a></li>
+                <li><a href="#basics" class="nav-link">مبانی زبان</a></li>
+                <li><a href="#variables" class="nav-link">متغیرها</a></li>
+                <li><a href="#operators" class="nav-link">عملگرها</a></li>
+                <li><a href="#control" class="nav-link">ساختارهای کنترلی</a></li>
+                <li><a href="#functions" class="nav-link">توابع</a></li>
+                <li><a href="#arrays" class="nav-link">آرایه‌ها</a></li>
+                <li><a href="#math" class="nav-link">ماژول Math (8 تابع)</a></li>
+                <li><a href="#string" class="nav-link">ماژول String (8 تابع)</a></li>
+                <li><a href="#file" class="nav-link">ماژول File (5 تابع)</a></li>
+                <li><a href="#network" class="nav-link">ماژول Network (4 تابع)</a></li>
+                <li><a href="#time" class="nav-link">ماژول Time (3 تابع)</a></li>
+                <li><a href="#system" class="nav-link">ماژول System (2 تابع)</a></li>
+                <li><a href="#array" class="nav-link">ماژول Array (8 تابع)</a></li>
+                <li><a href="#json" class="nav-link">ماژول JSON (4 تابع)</a></li>
+                <li><a href="#error" class="nav-link">مدیریت خطا (2 تابع)</a></li>
+                <li><a href="#advanced" class="nav-link">موضوعات پیشرفته</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <!-- نصب و راه‌اندازی -->
+            <div id="install" class="section active">
+                <h1>🚀 نصب و راه‌اندازی XorLang</h1>
+                
+                <h2>دانلود نسخه‌های موجود</h2>
+                <div class="note">
+                    <strong>📦 نسخه‌های رسمی XorLang:</strong><br>
+                    • <strong>3.0.1-beta for Linux</strong> - جدیدترین نسخه (توصیه می‌شود)<br>
+                    • <strong>3.0.0 for Linux</strong> - نسخه پایدار<br>
+                    • <strong>2.0.0 for Windows</strong> - منسوخ شده<br>
+                    • <strong>1.0.0 for Windows</strong> - منسوخ شده
+                </div>
+
+                <h3>دانلود از GitHub</h3>
+                <pre><code># دانلود installer از releases
+wget https://github.com/Mr-ali-jafari/xorlang/releases/download/v3.0.1-beta/xorlang-installer-linux.zip
+
+# استخراج فایل
+unzip xorlang-installer-linux.zip
+
+# اجرای installer
+chmod +x install.sh
+./install.sh</code></pre>
+
+                <h3>نصب دستی</h3>
+                <pre><code># کلون کردن repository
+git clone https://github.com/Mr-ali-jafari/xorlang.git
+cd xorlang
+
+# نصب dependencies
+sudo apt update
+sudo apt install gcc make libcurl4-openssl-dev
+
+# کامپایل
+make clean
+make
+
+# تست نصب
+./xorlang</code></pre>
+
+                <h3>اولین برنامه</h3>
+                <div class="example">
+                    <strong>فایل: hello.xor</strong>
+                    <pre><code>bucket name = ask('نام شما: ');
+show('سلام ' + name + '!');</code></pre>
+                </div>
+
+                <pre><code># کامپایل و اجرا
+./xorlang hello.xor
+./hello.xor.out</code></pre>
+            </div>
+
+            <!-- مبانی زبان -->
+            <div id="basics" class="section">
+                <h1>📝 مبانی زبان XorLang</h1>
+                
+                <h2>سینتکس اصلی</h2>
+                <p>XorLang یک زبان کامپایل شده با سینتکس فارسی است که به کد C تبدیل می‌شود.</p>
+
+                <h3>کامنت‌ها</h3>
+                <pre><code>note: این یک کامنت تک خطی است
+
+note start:
+این یک کامنت
+چند خطی است
+note end:</code></pre>
+
+                <h3>ساختار برنامه</h3>
+                <pre><code>note: برنامه ساده XorLang
+bucket message = 'سلام دنیا';
+show(message);</code></pre>
+
+                <div class="note">
+                    <strong>💡 نکته:</strong> هر دستور باید با semicolon (;) تمام شود.
+                </div>
+            </div>
+
+            <!-- متغیرها -->
+            <div id="variables" class="section">
+                <h1>🗂️ متغیرها در XorLang</h1>
+                
+                <h2>تعریف متغیر</h2>
+                <p>از کلمه کلیدی <code>bucket</code> برای تعریف متغیر استفاده می‌شود.</p>
+
+                <h3>انواع داده</h3>
+                <pre><code>note: اعداد صحیح
+bucket age = 25;
+bucket year = 2024;
+
+note: اعداد اعشاری  
+bucket height = 1.75;
+bucket pi = 3.14159;
+
+note: رشته‌ها
+bucket name = 'علی جعفری';
+bucket city = "تهران";
+
+note: بولین
+bucket is_student = yes;
+bucket is_working = no;
+
+note: آرایه‌ها
+bucket numbers[] = [1, 2, 3, 4, 5];
+bucket names[] = ['علی', 'سارا', 'محمد'];</code></pre>
+
+                <div class="example">
+                    <strong>مثال کامل:</strong>
+                    <pre><code>bucket user_name = ask('نام خود را وارد کنید: ');
+bucket user_age = ask('سن خود را وارد کنید: ');
+
+show('سلام ' + user_name);
+show('شما ' + user_age + ' سال دارید');</code></pre>
+                </div>
+            </div>
+
+            <!-- عملگرها -->
+            <div id="operators" class="section">
+                <h1>⚡ عملگرها</h1>
+                
+                <h2>عملگرهای ریاضی</h2>
+                <pre><code>bucket a = 10;
+bucket b = 3;
+
+bucket sum = a + b;        # جمع: 13
+bucket diff = a - b;       # تفریق: 7  
+bucket product = a * b;    # ضرب: 30
+bucket quotient = a / b;   # تقسیم: 3</code></pre>
+
+                <h2>عملگرهای مقایسه</h2>
+                <pre><code>bucket x = 10;
+bucket y = 20;
+
+bucket equal = (x == y);        # برابری: no
+bucket not_equal = (x != y);    # نابرابری: yes
+bucket greater = (x > y);       # بزرگتر: no
+bucket less = (x < y);          # کوچکتر: yes
+bucket gte = (x >= y);          # بزرگتر مساوی: no
+bucket lte = (x <= y);          # کوچکتر مساوی: yes</code></pre>
+
+                <div class="warning">
+                    <strong>⚠️ توجه:</strong> عملگرهای منطقی && و || هنوز پیاده‌سازی نشده‌اند.
+                </div>
+            </div>
+
+            <!-- ساختارهای کنترلی -->
+            <div id="control" class="section">
+                <h1>🔀 ساختارهای کنترلی</h1>
+                
+                <h2>شرطی‌ها (when if/else)</h2>
+                <pre><code>bucket age = ask('سن شما: ');
+
+when if (age >= 18) {
+    show('شما بزرگسال هستید');
+} when else {
+    show('شما نوجوان هستید');
+}</code></pre>
+
+                <h2>حلقه while</h2>
+                <pre><code>bucket i = 1;
+while loop (i <= 5) {
+    show('شماره: ' + i);
+    bucket i = i + 1;
+}</code></pre>
+
+                <h2>حلقه for</h2>
+                <pre><code>for loop (bucket j = 0; j < 10; bucket j = j + 1) {
+    show('مقدار j: ' + j);
+}</code></pre>
+
+                <div class="example">
+                    <strong>مثال: محاسبه فاکتوریل</strong>
+                    <pre><code>bucket n = ask('عدد را وارد کنید: ');
+bucket factorial = 1;
+bucket i = 1;
+
+while loop (i <= n) {
+    bucket factorial = factorial * i;
+    bucket i = i + 1;
+}
+
+show('فاکتوریل ' + n + ' برابر است با: ' + factorial);</code></pre>
+                </div>
+            </div>
+
+            <!-- توابع -->
+            <div id="functions" class="section">
+                <h1>🔧 توابع</h1>
+                
+                <h2>تعریف تابع</h2>
+                <pre><code>make function greet(name) {
+    show('سلام ' + name + '!');
+    give back 'خوش آمدید';
+}
+
+bucket result = greet('علی');
+show(result);</code></pre>
+
+                <h2>توابع با چندین پارامتر</h2>
+                <pre><code>make function calculate_area(length, width) {
+    bucket area = length * width;
+    give back area;
+}
+
+bucket room_area = calculate_area(5, 4);
+show('مساحت اتاق: ' + room_area + ' متر مربع');</code></pre>
+
+                <div class="note">
+                    <strong>💡 نکته:</strong> از <code>give back</code> برای بازگرداندن مقدار استفاده کنید.
+                </div>
+            </div>
+
+            <!-- ماژول Math -->
+            <div id="math" class="section">
+                <h1>🔢 ماژول Math (8 تابع آزمایش شده ✅)</h1>
+                
+                <h2>توابع ریاضی اصلی</h2>
+                <pre><code>note: جذر مربع
+bucket sqrt_result = math_sqrt(25);    # نتیجه: 5.0
+
+note: توان
+bucket power_result = math_pow(2, 3);  # نتیجه: 8.0
+
+note: قدر مطلق
+bucket abs_result = math_abs(-42);     # نتیجه: 42
+
+note: بیشترین و کمترین
+bucket max_result = math_max(10, 20);  # نتیجه: 20
+bucket min_result = math_min(10, 20);  # نتیجه: 10</code></pre>
+
+                <h2>اعداد تصادفی و گرد کردن</h2>
+                <pre><code>note: عدد تصادفی بین 0 و 1
+bucket random_float = math_random();
+
+note: عدد تصادفی در بازه
+bucket random_int = math_random_range(1, 100);
+
+note: گرد کردن
+bucket rounded = math_round(3.7);      # نتیجه: 4</code></pre>
+
+                <h2>تمام توابع ماژول Math</h2>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>✅ math_sqrt(x)</strong> - جذر مربع</p>
+                    <p><strong>✅ math_pow(base, exp)</strong> - توان</p>
+                    <p><strong>✅ math_abs(x)</strong> - قدر مطلق</p>
+                    <p><strong>✅ math_max(a, b)</strong> - بیشترین مقدار</p>
+                    <p><strong>✅ math_min(a, b)</strong> - کمترین مقدار</p>
+                    <p><strong>✅ math_round(x)</strong> - گرد کردن</p>
+                    <p><strong>✅ math_random()</strong> - عدد تصادفی 0-1</p>
+                    <p><strong>✅ math_random_range(min, max)</strong> - تصادفی در بازه</p>
+                </div>
+
+                <div class="example">
+                    <strong>مثال: ماشین حساب پیشرفته</strong>
+                    <pre><code>bucket a = ask('عدد اول: ');
+bucket b = ask('عدد دوم: ');
+
+show('جمع: ' + (a + b));
+show('تفریق: ' + (a - b));
+show('ضرب: ' + (a * b));
+show('تقسیم ایمن: ' + safe_divide(a, b));
+show('توان: ' + math_pow(a, b));
+show('جذر عدد اول: ' + math_sqrt(a));
+show('قدر مطلق تفریق: ' + math_abs(a - b));
+show('بیشترین: ' + math_max(a, b));
+show('کمترین: ' + math_min(a, b));
+
+bucket random = math_random_range(1, 100);
+show('عدد تصادفی: ' + random);</code></pre>
+                </div>
+            </div>
+
+            <!-- ماژول String -->
+            <div id="string" class="section">
+                <h1>📝 ماژول String (8 تابع پردازش متن ✅)</h1>
+                
+                <h2>عملیات اصلی روی رشته‌ها</h2>
+                <pre><code>bucket text = 'سلام دنیا';
+
+note: تبدیل به حروف بزرگ و کوچک
+bucket upper_text = string_to_upper(text);        # 'سلام دنیا'
+bucket lower_text = string_to_lower('HELLO');     # 'hello'
+
+note: بررسی وجود و شروع
+bucket contains = string_contains(text, 'دنیا');  # 1 (yes)
+bucket starts = string_starts_with(text, 'سلام'); # 1 (yes)
+
+note: حذف فضای خالی
+bucket trimmed = string_trim('  متن  ');         # 'متن'</code></pre>
+
+                <h2>عملیات پیشرفته</h2>
+                <pre><code>note: تقسیم و ترکیب رشته‌ها
+bucket parts = string_split('a,b,c', ',');       # ['a','b','c']
+bucket joined = string_join(['علی','احمد'], '-'); # 'علی-احمد'
+
+note: جایگزینی متن
+bucket replaced = string_replace('سلام دنیا', 'دنیا', 'XorLang'); # 'سلام XorLang'</code></pre>
+
+                <h2>تمام توابع ماژول String</h2>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>✅ string_to_upper(text)</strong> - تبدیل به حروف بزرگ</p>
+                    <p><strong>✅ string_to_lower(text)</strong> - تبدیل به حروف کوچک</p>
+                    <p><strong>✅ string_contains(text, search)</strong> - بررسی وجود زیررشته</p>
+                    <p><strong>✅ string_starts_with(text, prefix)</strong> - بررسی شروع رشته</p>
+                    <p><strong>✅ string_trim(text)</strong> - حذف فضای خالی ابتدا و انتها</p>
+                    <p><strong>✅ string_split(text, delimiter)</strong> - تقسیم رشته به آرایه</p>
+                    <p><strong>✅ string_join(array, separator)</strong> - ترکیب آرایه به رشته</p>
+                    <p><strong>✅ string_replace(text, old, new)</strong> - جایگزینی متن</p>
+                </div>
+
+                <div class="example">
+                    <strong>مثال: پردازشگر متن پیشرفته</strong>
+                    <pre><code>bucket user_input = ask('جمله‌ای وارد کنید: ');
+bucket clean_text = string_trim(user_input);
+
+note: تحلیل متن
+show('متن اصلی: ' + clean_text);
+show('حروف بزرگ: ' + string_to_upper(clean_text));
+show('حروف کوچک: ' + string_to_lower(clean_text));
+
+note: جستجو در متن
+when if (string_contains(clean_text, 'XorLang')) {
+    show('✅ شامل کلمه XorLang است');
+} when else {
+    show('❌ شامل کلمه XorLang نیست');
+}
+
+note: تقسیم کلمات
+bucket words = string_split(clean_text, ' ');
+show('تعداد کلمات: ' + len(words));
+
+note: جایگزینی
+bucket modified = string_replace(clean_text, 'سلام', 'درود');
+show('متن تغییر یافته: ' + modified);</code></pre>
+                </div>
+            </div>
+
+            <!-- ماژول Network -->
+            <div id="network" class="section">
+                <h1>🌐 ماژول Network (4 تابع شبکه با libcurl ✅)</h1>
+                
+                <h2>بررسی اتصال اینترنت</h2>
+                <pre><code>bucket online = is_online();
+
+when if (online == 1) {
+    show('اتصال اینترنت برقرار است ✅');
+} when else {
+    show('اتصال اینترنت قطع است ❌');
+}</code></pre>
+
+                <h2>درخواست‌های HTTP</h2>
+                <pre><code>note: درخواست GET
+bucket response = http_get('https://api.github.com/users/octocat');
+show('پاسخ سرور: ' + response);
+
+note: درخواست POST با داده
+bucket post_data = 'name=Ali&age=25&city=Tehran';
+bucket post_response = http_post('https://httpbin.org/post', post_data);
+show('نتیجه POST: ' + post_response);</code></pre>
+
+                <h2>دانلود فایل از اینترنت</h2>
+                <pre><code>bucket download_result = download('https://httpbin.org/json', 'api_data.json');
+
+when if (download_result == 1) {
+    show('✅ فایل با موفقیت دانلود شد');
+    bucket file_content = file_read('api_data.json');
+    show('محتوای فایل: ' + file_content);
+} when else {
+    show('❌ خطا در دانلود فایل');
+}</code></pre>
+
+                <h2>تمام توابع ماژول Network</h2>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>✅ is_online()</strong> - بررسی اتصال اینترنت (Google ping)</p>
+                    <p><strong>✅ http_get(url)</strong> - درخواست GET HTTP</p>
+                    <p><strong>✅ http_post(url, data)</strong> - درخواست POST با داده</p>
+                    <p><strong>✅ download(url, filename)</strong> - دانلود فایل از URL</p>
+                </div>
+
+                <div class="example">
+                    <strong>مثال: کلاینت API کامل</strong>
+                    <pre><code>note: بررسی اتصال قبل از درخواست
+when if (is_online()) {
+    show('🌐 اتصال اینترنت برقرار است');
+    
+    note: دریافت اطلاعات کاربر از GitHub
+    bucket user_data = http_get('https://api.github.com/users/torvalds');
+    show('اطلاعات کاربر: ' + user_data);
+    
+    note: ذخیره در فایل
+    file_write('user_info.json', user_data);
+    
+    note: ارسال گزارش
+    bucket report = 'user=torvalds&status=success';
+    bucket result = http_post('https://httpbin.org/post', report);
+    
+    note: دانلود فایل اضافی
+    bucket downloaded = download('https://httpbin.org/json', 'sample.json');
+    
+    when if (downloaded == 1) {
+        show('✅ تمام عملیات شبکه موفق بود');
+    } when else {
+        show('⚠️ خطا در دانلود');
+    }
+    
+} when else {
+    bucket error_code = error('عدم دسترسی به اینترنت');
+    show('❌ لطفا اتصال اینترنت را بررسی کنید');
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- مدیریت خطا -->
+            <div id="error" class="section">
+                <h1>🛡️ مدیریت خطا (2 تابع ایمن ✅)</h1>
+                
+                <h2>تقسیم ایمن</h2>
+                <pre><code>bucket a = 100;
+bucket b = 0;
+
+note: تقسیم معمولی ممکن است خطا دهد
+note: bucket unsafe_result = a / b;  # خطا!
+
+note: تقسیم ایمن
+bucket safe_result = safe_divide(a, b);  # نتیجه: 0</code></pre>
+
+                <h2>مدیریت خطاهای سفارشی</h2>
+                <pre><code>bucket age = ask('سن شما: ');
+
+when if (age < 0) {
+    bucket error_code = error('سن نمی‌تواند منفی باشد');
+    # error_code = -1
+} when else {
+    show('سن شما: ' + age);
+}</code></pre>
+
+                <div class="example">
+                    <strong>مثال: ماشین حساب ایمن</strong>
+                    <pre><code>bucket num1 = ask('عدد اول: ');
+bucket num2 = ask('عدد دوم: ');
+bucket operation = ask('عملیات (+, -, *, /): ');
+
+when if (operation == '+') {
+    show('نتیجه: ' + (num1 + num2));
+} when else when if (operation == '/') {
+    bucket result = safe_divide(num1, num2);
+    when if (num2 == 0) {
+        error('تقسیم بر صفر امکان‌پذیر نیست');
+    } when else {
+        show('نتیجه: ' + result);
+    }
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- ماژول File -->
+            <div id="file" class="section">
+                <h1>📁 ماژول File (5 تابع کار با فایل ✅)</h1>
+                
+                <h2>عملیات اصلی فایل</h2>
+                <pre><code>note: نوشتن در فایل
+file_write('data.txt', 'محتوای فایل فارسی');
+
+note: خواندن فایل
+bucket content = file_read('data.txt');
+show('محتوا: ' + content);
+
+note: بررسی وجود فایل
+bucket exists = file_exists('data.txt');  # 1 (yes)</code></pre>
+
+                <h2>عملیات پیشرفته فایل</h2>
+                <pre><code>note: اندازه فایل
+bucket size = file_size('data.txt');
+show('اندازه فایل: ' + size + ' بایت');
+
+note: حذف فایل
+file_delete('temp.txt');</code></pre>
+
+                <h2>تمام توابع ماژول File</h2>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>✅ file_write(filename, content)</strong> - نوشتن محتوا در فایل</p>
+                    <p><strong>✅ file_read(filename)</strong> - خواندن محتوای فایل</p>
+                    <p><strong>✅ file_exists(filename)</strong> - بررسی وجود فایل</p>
+                    <p><strong>✅ file_size(filename)</strong> - دریافت اندازه فایل</p>
+                    <p><strong>✅ file_delete(filename)</strong> - حذف فایل</p>
+                </div>
+
+                <div class="example">
+                    <strong>مثال: مدیر فایل ساده</strong>
+                    <pre><code>bucket filename = ask('نام فایل: ');
+
+when if (file_exists(filename)) {
+    bucket content = file_read(filename);
+    bucket size = file_size(filename);
+    
+    show('📄 فایل موجود است');
+    show('📏 اندازه: ' + size + ' بایت');
+    show('📝 محتوا: ' + content);
+    
+    bucket action = ask('حذف کنم؟ (yes/no): ');
+    when if (action == 'yes') {
+        file_delete(filename);
+        show('🗑️ فایل حذف شد');
+    }
+} when else {
+    show('❌ فایل وجود ندارد');
+    bucket new_content = ask('محتوای جدید: ');
+    file_write(filename, new_content);
+    show('✅ فایل ایجاد شد');
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- ماژول Time -->
+            <div id="time" class="section">
+                <h1>⏰ ماژول Time (3 تابع زمان ✅)</h1>
+                
+                <h2>کار با زمان</h2>
+                <pre><code>note: زمان فعلی (timestamp)
+bucket now = time_now();
+show('زمان فعلی: ' + now);
+
+note: فرمت کردن زمان
+bucket formatted = time_format(now, '%Y-%m-%d %H:%M:%S');
+show('تاریخ فرمت شده: ' + formatted);
+
+note: توقف برنامه
+show('شروع انتظار...');
+time_sleep(3);  # توقف 3 ثانیه
+show('انتظار تمام شد!');</code></pre>
+
+                <h2>تمام توابع ماژول Time</h2>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>✅ time_now()</strong> - دریافت timestamp فعلی</p>
+                    <p><strong>✅ time_format(timestamp, format)</strong> - فرمت کردن زمان</p>
+                    <p><strong>✅ time_sleep(seconds)</strong> - توقف برنامه</p>
+                </div>
+            </div>
+
+            <!-- ماژول System -->
+            <div id="system" class="section">
+                <h1>⚙️ ماژول System (2 تابع سیستم ✅)</h1>
+                
+                <h2>عملیات سیستم</h2>
+                <pre><code>note: اجرای دستور سیستم
+bucket result = system_run('ls -la');
+show('خروجی دستور: ' + result);
+
+note: دریافت متغیر محیطی
+bucket home_dir = system_get_env('HOME');
+show('مسیر خانه: ' + home_dir);</code></pre>
+
+                <h2>تمام توابع ماژول System</h2>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>✅ system_run(command)</strong> - اجرای دستور سیستم</p>
+                    <p><strong>✅ system_get_env(variable)</strong> - دریافت متغیر محیطی</p>
+                </div>
+            </div>
+
+            <!-- ماژول Array -->
+            <div id="array" class="section">
+                <h1>📊 ماژول Array (8 تابع آرایه ✅)</h1>
+                
+                <h2>عملیات اصلی آرایه</h2>
+                <pre><code>bucket arr[] = [1, 2, 3, 4, 5];
+
+note: طول آرایه
+bucket length = len(arr);  # 5
+
+note: اضافه کردن عنصر
+push(arr, 6);  # [1,2,3,4,5,6]
+
+note: حذف آخرین عنصر
+bucket last = pop(arr);  # last = 6, arr = [1,2,3,4,5]</code></pre>
+
+                <h2>عملیات پیشرفته آرایه</h2>
+                <pre><code>note: مرتب‌سازی و معکوس
+array_sort(arr);           # [1,2,3,4,5]
+array_reverse(arr);        # [5,4,3,2,1]
+
+note: حذف تکراری و جستجو
+bucket unique_arr = array_unique([1,1,2,3,3]);  # [1,2,3]
+bucket found_index = array_find(arr, 3);        # index عنصر 3
+
+note: برش آرایه
+bucket slice = array_slice(arr, 1, 3);  # عناصر از index 1 تا 3</code></pre>
+
+                <h2>تمام توابع ماژول Array</h2>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>✅ len(array)</strong> - طول آرایه</p>
+                    <p><strong>✅ push(array, element)</strong> - اضافه کردن عنصر</p>
+                    <p><strong>✅ pop(array)</strong> - حذف و برگرداندن آخرین عنصر</p>
+                    <p><strong>✅ array_sort(array)</strong> - مرتب‌سازی آرایه</p>
+                    <p><strong>✅ array_reverse(array)</strong> - معکوس کردن آرایه</p>
+                    <p><strong>✅ array_unique(array)</strong> - حذف عناصر تکراری</p>
+                    <p><strong>✅ array_find(array, element)</strong> - جستجوی عنصر</p>
+                    <p><strong>✅ array_slice(array, start, end)</strong> - برش آرایه</p>
+                </div>
+
+                <div class="example">
+                    <strong>مثال: مدیریت لیست اعداد</strong>
+                    <pre><code>bucket numbers[] = [];
+
+note: دریافت اعداد از کاربر
+bucket count = ask('چند عدد می‌خواهید وارد کنید؟ ');
+bucket i = 0;
+
+while loop (i < count) {
+    bucket num = ask('عدد ' + (i + 1) + ': ');
+    push(numbers, num);
+    bucket i = i + 1;
+}
+
+note: نمایش آمار
+show('📊 تعداد اعداد: ' + len(numbers));
+show('📋 لیست اصلی: ' + numbers);
+
+note: مرتب‌سازی و نمایش
+array_sort(numbers);
+show('📈 مرتب شده: ' + numbers);
+
+note: حذف تکراری
+bucket unique_numbers = array_unique(numbers);
+show('🔄 بدون تکرار: ' + unique_numbers);
+
+note: جستجو
+bucket search = ask('عدد مورد جستجو: ');
+bucket found = array_find(numbers, search);
+when if (found >= 0) {
+    show('✅ عدد در موقعیت ' + found + ' یافت شد');
+} when else {
+    show('❌ عدد یافت نشد');
+}</code></pre>
+                </div>
+            </div>
+
+            <!-- ماژول JSON -->
+            <div id="json" class="section">
+                <h1>📋 ماژول JSON (4 تابع JSON ✅)</h1>
+                
+                <h2>کار با JSON</h2>
+                <pre><code>note: تجزیه JSON
+bucket json_str = '{"name": "علی", "age": 25, "city": "تهران"}';
+bucket parsed = json_parse(json_str);
+
+note: دریافت مقادیر
+bucket name = json_get(parsed, 'name');
+bucket age = json_get(parsed, 'age');
+show('نام: ' + name + ', سن: ' + age);
+
+note: تنظیم مقدار جدید
+json_set(parsed, 'job', 'برنامه‌نویس');
+
+note: تبدیل به JSON
+bucket json_output = json_stringify(parsed);
+show('JSON نهایی: ' + json_output);</code></pre>
+
+                <h2>تمام توابع ماژول JSON</h2>
+                <div style="background: rgba(0,0,0,0.3); padding: 20px; border-radius: 8px; margin: 20px 0;">
+                    <p><strong>✅ json_parse(json_string)</strong> - تجزیه رشته JSON</p>
+                    <p><strong>✅ json_stringify(object)</strong> - تبدیل شیء به JSON</p>
+                    <p><strong>✅ json_get(object, key)</strong> - دریافت مقدار کلید</p>
+                    <p><strong>✅ json_set(object, key, value)</strong> - تنظیم مقدار کلید</p>
+                </div>
+
+                <div class="example">
+                    <strong>مثال: مدیریت اطلاعات کاربر</strong>
+                    <pre><code>note: ایجاد پروفایل کاربر
+bucket user_profile = '{}';  # JSON خالی
+bucket parsed_profile = json_parse(user_profile);
+
+note: دریافت اطلاعات از کاربر
+bucket name = ask('نام: ');
+bucket age = ask('سن: ');
+bucket city = ask('شهر: ');
+
+note: تنظیم اطلاعات در JSON
+json_set(parsed_profile, 'name', name);
+json_set(parsed_profile, 'age', age);
+json_set(parsed_profile, 'city', city);
+json_set(parsed_profile, 'created_at', time_now());
+
+note: ذخیره در فایل
+bucket final_json = json_stringify(parsed_profile);
+file_write('user_profile.json', final_json);
+
+show('✅ پروفایل کاربر ذخیره شد');
+show('📄 محتوا: ' + final_json);
+
+note: خواندن و نمایش
+bucket saved_data = file_read('user_profile.json');
+bucket loaded_profile = json_parse(saved_data);
+bucket saved_name = json_get(loaded_profile, 'name');
+show('👤 کاربر بازیابی شده: ' + saved_name);</code></pre>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navigation functionality
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Remove active class from all links and sections
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+                
+                // Add active class to clicked link
+                this.classList.add('active');
+                
+                // Show corresponding section
+                const targetId = this.getAttribute('href').substring(1);
+                document.getElementById(targetId).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

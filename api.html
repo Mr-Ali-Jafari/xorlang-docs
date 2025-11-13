@@ -1,317 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مرجع API - XorLang</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">🔥</span>
-                <span class="logo-text">XorLang</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">خانه</a></li>
-                <li><a href="tutorials.html" class="nav-link">آموزش‌ها</a></li>
-                <li><a href="api.html" class="nav-link active">مرجع API</a></li>
-                <li><a href="examples.html" class="nav-link">مثال‌ها</a></li>
-                <li><a href="faq.html" class="nav-link">سوالات متداول</a></li>
-                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">
-                <span class="gradient-text">مرجع API</span>
-                <br>کتابخانه استاندارد XorLang
-            </h1>
-            <p class="hero-subtitle">
-                مستندات کامل تمام توابع و ماژول‌های کتابخانه استاندارد
-            </p>
-        </div>
-    </section>
-
-    <!-- API Categories -->
-    <section class="api-categories">
-        <div class="container">
-            <div class="api-nav">
-                <button class="api-nav-btn active" data-module="math">🔢 Math</button>
-                <button class="api-nav-btn" data-module="string">📝 String</button>
-                <button class="api-nav-btn" data-module="file">📁 File</button>
-                <button class="api-nav-btn" data-module="time">⏰ Time</button>
-                <button class="api-nav-btn" data-module="system">⚙️ System</button>
-                <button class="api-nav-btn" data-module="network">🌐 Network</button>
-                <button class="api-nav-btn" data-module="error">🛡️ Error</button>
-            </div>
-
-            <!-- Math Module -->
-            <div id="math" class="api-module active">
-                <h2>📊 ماژول Math ✅ <span class="badge badge-success">آزمایش شده</span></h2>
-                <p>توابع ریاضی پیشرفته برای محاسبات عددی - تمام توابع اصلی آزمایش و تأیید شده‌اند</p>
-
-                <div class="function-card feature-working">
-                    <h3>math_sqrt(number) ✅ <span class="badge badge-success">آزمایش شده</span></h3>
-                    <p>محاسبه جذر مربع عدد - نتیجه تست: math_sqrt(64) = 8.00</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامتر:</strong> number (double) - عدد مورد نظر
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> double - جذر مربع عدد
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">// ⚠️ Import فعلاً کار نمی‌کند - از توابع مستقیم استفاده کنید
-bucket result = math_sqrt(25);
-show(result); // خروجی: 5.00 ✅ آزمایش شده</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="function-card feature-working">
-                    <h3>math_pow(base, exponent) ✅ <span class="badge badge-success">آزمایش شده</span></h3>
-                    <p>محاسبه توان عدد - نتیجه تست: math_pow(3, 4) = 81.00</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامترها:</strong><br>
-                            - base (double) - عدد پایه<br>
-                            - exponent (double) - توان
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> double - نتیجه توان
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">bucket result = math_pow(2, 3);
-show(result); // خروجی: 8.00 ✅ آزمایش شده</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="function-card">
-                    <h3>math_abs(number)</h3>
-                    <p>محاسبه قدر مطلق عدد</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامتر:</strong> number (int) - عدد مورد نظر
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> int - قدر مطلق عدد
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">putlib math_abs from math;
-bucket result = math_abs(-42);
-show(result); // خروجی: 42</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="function-card">
-                    <h3>math_max(a, b), math_min(a, b)</h3>
-                    <p>پیدا کردن بیشترین و کمترین مقدار</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامترها:</strong> a, b (int) - دو عدد برای مقایسه
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> int - بیشترین یا کمترین مقدار
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">putlib math_max, math_min from math;
-bucket max_val = math_max(10, 20); // 20
-bucket min_val = math_min(10, 20); // 10</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- String Module -->
-            <div id="string" class="api-module">
-                <h2>📝 ماژول String</h2>
-                <p>توابع پردازش و دستکاری رشته‌ها</p>
-
-                <div class="function-card">
-                    <h3>string_to_upper(str)</h3>
-                    <p>تبدیل رشته به حروف بزرگ</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامتر:</strong> str (char*) - رشته ورودی
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> char* - رشته با حروف بزرگ
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">putlib string_to_upper from string;
-bucket result = string_to_upper('hello world');
-show(result); // خروجی: HELLO WORLD</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="function-card">
-                    <h3>string_contains(haystack, needle)</h3>
-                    <p>بررسی وجود زیررشته در رشته</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامترها:</strong><br>
-                            - haystack (char*) - رشته اصلی<br>
-                            - needle (char*) - زیررشته مورد جستجو
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> int - 1 اگر پیدا شد، 0 اگر پیدا نشد
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">putlib string_contains from string;
-bucket found = string_contains('hello world', 'world');
-show(found); // خروجی: 1</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- File Module -->
-            <div id="file" class="api-module">
-                <h2>📁 ماژول File</h2>
-                <p>عملیات فایل و دایرکتوری</p>
-
-                <div class="function-card">
-                    <h3>file_write(filename, content)</h3>
-                    <p>نوشتن محتوا در فایل</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامترها:</strong><br>
-                            - filename (char*) - نام فایل<br>
-                            - content (char*) - محتوای فایل
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> int - 1 در صورت موفقیت، 0 در صورت خطا
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">putlib file_write from file;
-bucket success = file_write('data.txt', 'سلام دنیا!');
-show(success);</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="function-card">
-                    <h3>file_read(filename)</h3>
-                    <p>خواندن محتوای فایل</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامتر:</strong> filename (char*) - نام فایل
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> char* - محتوای فایل یا NULL در صورت خطا
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">putlib file_read from file;
-bucket content = file_read('data.txt');
-show(content);</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Network Module -->
-            <div id="network" class="api-module">
-                <h2>🌐 ماژول Network</h2>
-                <p>عملیات شبکه و اینترنت</p>
-
-                <div class="function-card">
-                    <h3>http_get(url)</h3>
-                    <p>ارسال درخواست HTTP GET</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامتر:</strong> url (char*) - آدرس URL
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> char* - پاسخ سرور
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">putlib http_get from networking;
-bucket response = http_get('https://api.github.com');
-show(response);</code></pre>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="function-card">
-                    <h3>is_online()</h3>
-                    <p>بررسی اتصال اینترنت</p>
-                    <div class="function-details">
-                        <div class="param">
-                            <strong>پارامتر:</strong> هیچ
-                        </div>
-                        <div class="return">
-                            <strong>خروجی:</strong> int - 1 اگر آنلاین، 0 اگر آفلاین
-                        </div>
-                        <div class="example">
-                            <strong>مثال:</strong>
-                            <pre><code class="language-xorlang">putlib is_online from networking;
-bucket connected = is_online();
-show(connected);</code></pre>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>XorLang</h3>
-                    <p>زبان برنامه‌نویسی مدرن برای توسعه‌دهندگان فارسی‌زبان</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; ۲۰۲۴ XorLang - ساخته شده توسط <strong>علی جعفری</strong></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="js/script.js"></script>
-    <script>
-        // API Module Navigation
-        document.addEventListener('DOMContentLoaded', function() {
-            const navButtons = document.querySelectorAll('.api-nav-btn');
-            const modules = document.querySelectorAll('.api-module');
-            
-            navButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetModule = button.getAttribute('data-module');
-                    
-                    // Remove active class from all
-                    navButtons.forEach(btn => btn.classList.remove('active'));
-                    modules.forEach(module => module.classList.remove('active'));
-                    
-                    // Add active class to clicked
-                    button.classList.add('active');
-                    document.getElementById(targetModule).classList.add('active');
-                });
-            });
-        });
-    </script>
-</body>
-</html>

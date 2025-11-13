@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XorLang - Modern Programming Language with Persian Syntax</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%); color: #e0e0e0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header { background: rgba(26, 26, 46, 0.9); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+        .logo { font-size: 1.8rem; font-weight: bold; color: #00d4ff; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: #e0e0e0; text-decoration: none; transition: color 0.3s; }
+        .nav-links a:hover { color: #00d4ff; }
+        
+        /* Hero Section */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding-top: 80px; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 1rem; background: linear-gradient(45deg, #00d4ff, #ff6b35); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-content p { font-size: 1.3rem; margin-bottom: 2rem; color: #ccc; }
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn { padding: 12px 24px; border: none; border-radius: 8px; font-size: 1.1rem; cursor: pointer; text-decoration: none; display: inline-block; transition: all 0.3s; }
+        .btn-primary { background: linear-gradient(45deg, #00d4ff, #0099cc); color: white; }
+        .btn-secondary { background: transparent; border: 2px solid #ff6b35; color: #ff6b35; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 15px rgba(0, 212, 255, 0.3); }
+        
+        /* Features */
+        .features { padding: 80px 0; }
+        .features h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #00d4ff; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .feature-card { background: rgba(26, 26, 46, 0.8); padding: 2rem; border-radius: 12px; border: 1px solid #333; }
+        .feature-card h3 { color: #ff6b35; margin-bottom: 1rem; }
+        .feature-icon { font-size: 2rem; margin-bottom: 1rem; }
+        
+        /* Code Example */
+        .code-section { padding: 80px 0; background: rgba(16, 16, 32, 0.8); }
+        .code-section h2 { text-align: center; font-size: 2.5rem; margin-bottom: 3rem; color: #00d4ff; }
+        .code-example { background: #1e1e1e; border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+        .code-example pre { color: #00ff88; font-size: 1.1rem; overflow-x: auto; }
+        
+        /* Stats */
+        .stats { padding: 80px 0; text-align: center; }
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        .stat-card { background: rgba(26, 26, 46, 0.8); padding: 2rem; border-radius: 12px; }
+        .stat-number { font-size: 2.5rem; font-weight: bold; color: #00d4ff; }
+        .stat-label { color: #ccc; margin-top: 0.5rem; }
+        
+        /* Footer */
+        footer { background: #1a1a2e; padding: 40px 0; text-align: center; }
+        .footer-links { display: flex; justify-content: center; gap: 2rem; margin-bottom: 2rem; }
+        .footer-links a { color: #ccc; text-decoration: none; }
+        .footer-links a:hover { color: #00d4ff; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 2.5rem; }
+            .nav-links { display: none; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">🔥 XorLang</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="tutorial.html">Tutorial</a></li>
+                <li><a href="index-fa.html">فارسی</a></li>
+                <li><a href="donate.html">Donate</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>XorLang</h1>
+                    <p>Modern compiled programming language with Persian syntax</p>
+                    <div class="cta-buttons">
+                        <a href="tutorial.html" class="btn btn-primary">🚀 Start Learning</a>
+                        <a href="https://github.com/Mr-ali-jafari/xorlang" class="btn btn-secondary">📦 Download</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>XorLang Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">⚡</div>
+                        <h3>Compiled & Fast</h3>
+                        <p>XorLang compiles to C code providing blazing fast execution performance</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🇮🇷</div>
+                        <h3>Persian Syntax</h3>
+                        <p>Keywords in Persian language making programming more accessible for Persian speakers</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📚</div>
+                        <h3>Rich Standard Library</h3>
+                        <p>50+ built-in functions across Math, String, File, Network and more modules</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Network Capabilities</h3>
+                        <p>HTTP requests, file downloads, and internet connectivity checking</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Safe Error Handling</h3>
+                        <p>Advanced error management system for robust applications</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔧</div>
+                        <h3>Simple yet Powerful</h3>
+                        <p>Easy syntax for beginners, advanced features for professionals</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="code-section">
+            <div class="container">
+                <h2>XorLang Code Examples</h2>
+                <div class="code-example">
+                    <pre><code>note: Simple calculator program
+bucket num1 = ask('Enter first number: ');
+bucket num2 = ask('Enter second number: ');
+bucket operation = ask('Operation (+, -, *, /): ');
+
+when if (operation == '+') {
+    bucket result = num1 + num2;
+    show('Result: ' + result);
+} when else when if (operation == '/') {
+    bucket result = safe_divide(num1, num2);
+    show('Result: ' + result);
+} when else {
+    error('Invalid operation');
+}</code></pre>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>note: Network and file operations
+when if (is_online()) {
+    show('Internet connection available');
+    bucket response = http_get('https://api.example.com/data');
+    file_write('response.json', response);
+    show('Data saved successfully');
+} when else {
+    show('No internet connection');
+}</code></pre>
+                </div>
+
+                <div class="code-example">
+                    <pre><code>note: Advanced math functions
+bucket number = ask('Enter a number: ');
+bucket sqrt_result = math_sqrt(number);
+bucket power_result = math_pow(number, 2);
+bucket random_num = math_random_range(1, 100);
+
+show('Square root: ' + sqrt_result);
+show('Squared: ' + power_result);
+show('Random number: ' + random_num);</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats">
+            <div class="container">
+                <h2>XorLang Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Standard Library Functions</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">7</div>
+                        <div class="stat-label">Core Modules</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">80+</div>
+                        <div class="stat-label">Token Types</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">18</div>
+                        <div class="stat-label">AST Node Types</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Available Versions</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🐧</div>
+                        <h3>Linux 3.0.1-beta</h3>
+                        <p>Latest version with all features - Recommended</p>
+                        <a href="https://github.com/Mr-ali-jafari/xorlang/releases" class="btn btn-primary" style="margin-top: 1rem;">Download</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🐧</div>
+                        <h3>Linux 3.0.0</h3>
+                        <p>Stable version for production use</p>
+                        <a href="https://github.com/Mr-ali-jafari/xorlang/releases" class="btn btn-secondary" style="margin-top: 1rem;">Download</a>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🪟</div>
+                        <h3>Windows (Outdated)</h3>
+                        <p>Versions 2.0.0 and 1.0.0 for Windows are outdated</p>
+                        <span style="color: #ff6b35;">Migration to Linux recommended</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2>Complete Standard Library Modules</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🔢</div>
+                        <h3>Math Module ✅</h3>
+                        <p><strong>8 tested functions:</strong><br>
+                        • math_sqrt() - square root<br>
+                        • math_pow() - power<br>
+                        • math_abs() - absolute value<br>
+                        • math_max() - maximum<br>
+                        • math_min() - minimum<br>
+                        • math_round() - rounding<br>
+                        • math_random() - random 0-1<br>
+                        • math_random_range() - random in range</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📝</div>
+                        <h3>String Module ✅</h3>
+                        <p><strong>8 text processing functions:</strong><br>
+                        • string_to_upper() - uppercase<br>
+                        • string_to_lower() - lowercase<br>
+                        • string_contains() - search<br>
+                        • string_starts_with() - starts with<br>
+                        • string_trim() - remove whitespace<br>
+                        • string_split() - split to array<br>
+                        • string_join() - join array<br>
+                        • string_replace() - text replacement</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📁</div>
+                        <h3>File Module ✅</h3>
+                        <p><strong>5 file operations:</strong><br>
+                        • file_read() - read file<br>
+                        • file_write() - write file<br>
+                        • file_exists() - check existence<br>
+                        • file_delete() - delete file<br>
+                        • file_size() - get file size</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Network Module ✅</h3>
+                        <p><strong>4 network functions (libcurl):</strong><br>
+                        • is_online() - connectivity check<br>
+                        • http_get() - GET request<br>
+                        • http_post() - POST request<br>
+                        • download() - file download</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Time Module ✅</h3>
+                        <p><strong>3 time functions:</strong><br>
+                        • time_now() - current timestamp<br>
+                        • time_format() - format time<br>
+                        • time_sleep() - pause execution</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⚙️</div>
+                        <h3>System Module ✅</h3>
+                        <p><strong>2 system functions:</strong><br>
+                        • system_run() - execute command<br>
+                        • system_get_env() - environment variable</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Error Handling ✅</h3>
+                        <p><strong>2 safe functions:</strong><br>
+                        • safe_divide() - safe division<br>
+                        • error() - custom error</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Array Module ✅</h3>
+                        <p><strong>8 array functions:</strong><br>
+                        • len() - array length<br>
+                        • push() - add element<br>
+                        • pop() - remove last<br>
+                        • array_sort() - sort array<br>
+                        • array_reverse() - reverse<br>
+                        • array_unique() - remove duplicates<br>
+                        • array_find() - search element<br>
+                        • array_slice() - array slice</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <h3>JSON Module</h3>
+                        <p><strong>4 JSON functions:</strong><br>
+                        • json_parse() - parse JSON<br>
+                        • json_stringify() - convert to JSON<br>
+                        • json_get() - get value<br>
+                        • json_set() - set value</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Time Module</h3>
+                        <p>Current time, formatting, sleep functions</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Error Handling</h3>
+                        <p>Safe division, custom error messages</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="code-section">
+            <div class="container">
+                <h2>Installation</h2>
+                <div class="code-example">
+                    <pre><code># Download installer from GitHub releases
+wget https://github.com/Mr-ali-jafari/xorlang/releases/download/v3.0.1-beta/xorlang-installer-linux.zip
+
+# Extract and install
+unzip xorlang-installer-linux.zip
+chmod +x install.sh
+./install.sh
+
+# Or compile from source
+git clone https://github.com/Mr-ali-jafari/xorlang.git
+cd xorlang
+make
+
+# Test installation
+./xorlang --version</code></pre>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://github.com/Mr-ali-jafari/xorlang">GitHub</a>
+                <a href="tutorial.html">Tutorial</a>
+                <a href="donate.html">Donate</a>
+                <a href="index-fa.html">فارسی</a>
+            </div>
+            <p>&copy; 2024 XorLang - Made with ❤️ by Ali Jafari</p>
+        </div>
+    </footer>
+</body>
+</html>

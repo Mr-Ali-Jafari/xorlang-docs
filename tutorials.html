@@ -1,195 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>آموزش‌های XorLang - راهنمای کامل برنامه‌نویسی</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <span class="logo-icon">🔥</span>
-                <span class="logo-text">XorLang</span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">خانه</a></li>
-                <li><a href="tutorials.html" class="nav-link active">آموزش‌ها</a></li>
-                <li><a href="api.html" class="nav-link">مرجع API</a></li>
-                <li><a href="examples.html" class="nav-link">مثال‌ها</a></li>
-                <li><a href="faq.html" class="nav-link">سوالات متداول</a></li>
-                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1 class="hero-title">
-                <span class="gradient-text">آموزش‌های XorLang</span>
-                <br>از مبتدی تا پیشرفته
-            </h1>
-            <p class="hero-subtitle">
-                راهنمای کامل یادگیری زبان برنامه‌نویسی XorLang با مثال‌های عملی
-            </p>
-        </div>
-    </section>
-
-    <!-- Tutorial Categories -->
-    <section class="tutorials">
-        <div class="container">
-            <div class="tutorial-categories">
-                <div class="category-card">
-                    <div class="category-icon">🚀</div>
-                    <h3>شروع سریع</h3>
-                    <p>نصب، تنظیم و اولین برنامه</p>
-                    <a href="#quick-start" class="btn btn-primary">شروع کنید</a>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-icon">📝</div>
-                    <h3>مبانی زبان</h3>
-                    <p>متغیرها، توابع، حلقه‌ها و شرط‌ها</p>
-                    <a href="#basics" class="btn btn-primary">یاد بگیرید</a>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-icon">📚</div>
-                    <h3>کتابخانه استاندارد</h3>
-                    <p>Math، String، File، Network و سایر ماژول‌ها</p>
-                    <a href="#stdlib" class="btn btn-primary">کاوش کنید</a>
-                </div>
-                
-                <div class="category-card">
-                    <div class="category-icon">🔧</div>
-                    <h3>پروژه‌های عملی</h3>
-                    <p>ساخت برنامه‌های واقعی با XorLang</p>
-                    <a href="#projects" class="btn btn-primary">بسازید</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Quick Start Tutorial -->
-    <section id="quick-start" class="tutorial-section">
-        <div class="container">
-            <h2 class="section-title">🚀 شروع سریع</h2>
-            
-            <div class="tutorial-step">
-                <h3>گام ۱: نصب XorLang</h3>
-                <pre><code class="language-bash"># نصب وابستگی‌ها
-sudo apt-get install gcc libcurl4-openssl-dev
-
-# کامپایل XorLang
-cd xorlang
-make</code></pre>
-            </div>
-
-            <div class="tutorial-step">
-                <h3>گام ۲: اولین برنامه</h3>
-                <pre><code class="language-xorlang">// فایل: hello.xor
-show('سلام دنیا!');
-show('XorLang آماده است!');</code></pre>
-            </div>
-
-            <div class="tutorial-step">
-                <h3>گام ۳: اجرای برنامه</h3>
-                <pre><code class="language-bash"># کامپایل و اجرا
-./xorlang hello.xor
-./hello.xor.out</code></pre>
-            </div>
-        </div>
-    </section>
-
-    <!-- Basics Tutorial -->
-    <section id="basics" class="tutorial-section">
-        <div class="container">
-            <h2 class="section-title">📝 مبانی زبان</h2>
-            
-            <div class="tutorial-grid">
-                <div class="tutorial-card">
-                    <h3>متغیرها</h3>
-                    <pre><code class="language-xorlang">// تعریف متغیر
-bucket name = 'علی';
-bucket age = 25;
-bucket height = 1.75;
-
-// آرایه‌ها
-bucket numbers[] = [1, 2, 3, 4, 5];
-bucket names[] = ['احمد', 'فاطمه', 'حسن'];</code></pre>
-                </div>
-
-                <div class="tutorial-card">
-                    <h3>توابع</h3>
-                    <pre><code class="language-xorlang">// تعریف تابع
-make function greet(name) {
-    give back 'سلام ' + name + '!';
-}
-
-// فراخوانی تابع
-bucket message = greet('دوست');
-show(message);</code></pre>
-                </div>
-
-                <div class="tutorial-card">
-                    <h3>شرط‌ها</h3>
-                    <pre><code class="language-xorlang">bucket score = 85;
-
-when if (score >= 90) {
-    show('عالی!');
-} when else if (score >= 70) {
-    show('خوب!');
-} when else {
-    show('تلاش بیشتر!');
-}</code></pre>
-                </div>
-
-                <div class="tutorial-card">
-                    <h3>حلقه‌ها</h3>
-                    <pre><code class="language-xorlang">// حلقه for
-for loop (bucket i = 1; i <= 5; i = i + 1) {
-    show('شماره: ' + i);
-}
-
-// حلقه while
-bucket count = 0;
-while loop (count < 3) {
-    show('تکرار: ' + count);
-    count = count + 1;
-}</code></pre>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>XorLang</h3>
-                    <p>زبان برنامه‌نویسی مدرن برای توسعه‌دهندگان فارسی‌زبان</p>
-                </div>
-                <div class="footer-section">
-                    <h4>لینک‌های مفید</h4>
-                    <ul>
-                        <li><a href="index.html">خانه</a></li>
-                        <li><a href="tutorials.html">آموزش‌ها</a></li>
-                        <li><a href="api.html">مرجع API</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; ۲۰۲۴ XorLang - ساخته شده توسط <strong>علی جعفری</strong></p>
-            </div>
-        </div>
-    </footer>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
