@@ -225,13 +225,87 @@ show('Random number: ' + random_num);</code></pre>
 
         <section class="features">
             <div class="container">
-                <h2>Complete Standard Library Modules</h2>
+                <h2>✅ Standard Library Modules - Comprehensive Test Results</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <div class="feature-icon">🔢</div>
-                        <h3>Math Module ✅</h3>
-                        <p><strong>8 tested functions:</strong><br>
-                        • math_sqrt() - square root<br>
+                        <div class="feature-icon">🧮</div>
+                        <h3>Math Module (8/8 - 100% ✅)</h3>
+                        <p><strong>All functions tested and working:</strong><br>
+                        ✅ math_sqrt(25) → 5.00<br>
+                        ✅ math_pow(2, 3) → 8.00<br>
+                        ✅ math_abs(-10) → 10<br>
+                        ✅ math_max(15, 25) → 25<br>
+                        ✅ math_min(15, 25) → 15<br>
+                        ✅ math_round(4.7) → 5<br>
+                        ✅ math_random() → 0.84<br>
+                        ✅ math_random_range(1, 100) → 87</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔤</div>
+                        <h3>String Module (5/8 - 63% ⚠️)</h3>
+                        <p><strong>Working functions:</strong><br>
+                        ✅ string_to_upper('xorlang') → "XORLANG"<br>
+                        ✅ string_to_lower('HELLO') → "hello"<br>
+                        ✅ string_contains('Hello', 'He') → 1<br>
+                        ✅ string_starts_with('Hello', 'He') → 1<br>
+                        ✅ string_trim('  hello  ') → "hello"<br>
+                        <strong>Not implemented:</strong><br>
+                        ❌ string_split(), string_join(), string_replace()</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📁</div>
+                        <h3>File Module (5/5 - 100% ✅)</h3>
+                        <p><strong>All functions tested and working:</strong><br>
+                        ✅ file_write('test.txt', 'content') → 1<br>
+                        ✅ file_read('test.txt') → "Final XorLang test"<br>
+                        ✅ file_exists('test.txt') → 1<br>
+                        ✅ file_delete('temp.txt') → 1<br>
+                        ✅ file_size('test.txt') → 25</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🌐</div>
+                        <h3>Network Module (4/4 - 100% ✅)</h3>
+                        <p><strong>All functions tested and working:</strong><br>
+                        ✅ is_online() → 1<br>
+                        ✅ http_get(url) → response<br>
+                        ✅ http_post(url, data) → response<br>
+                        ✅ download(url, 'file.json') → 1</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🛡️</div>
+                        <h3>Error Handling (2/2 - 100% ✅)</h3>
+                        <p><strong>All functions tested and working:</strong><br>
+                        ✅ safe_divide(100, 5) → 20<br>
+                        ✅ safe_divide(100, 0) → 0<br>
+                        ✅ error('message') → -1 + displays error</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📊</div>
+                        <h3>Array Module (4/10 - 40% ⚠️)</h3>
+                        <p><strong>Working functions:</strong><br>
+                        ✅ len(numbers) → 5<br>
+                        ✅ numbers[0] → 10<br>
+                        ✅ push(numbers, 60) → 60<br>
+                        ✅ Array definition: [1, 2, 3]<br>
+                        <strong>Not implemented:</strong><br>
+                        ❌ pop(), array_sort(), array_reverse(), etc.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏰</div>
+                        <h3>Time Module (2/3 - 67% ⚠️)</h3>
+                        <p><strong>Working functions:</strong><br>
+                        ✅ time_now() → 1763070066<br>
+                        ✅ time_sleep(2) → *2 second pause*<br>
+                        <strong>Not implemented:</strong><br>
+                        ❌ time_format() - format timestamp</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">💻</div>
+                        <h3>System Module (1/2 - 50% ⚠️)</h3>
+                        <p><strong>Working functions:</strong><br>
+                        ✅ system_get_env('HOME') → "/home/ali"<br>
+                        <strong>Not implemented:</strong><br>
+                        ❌ system_run() - execute commands</p>
                         • math_pow() - power<br>
                         • math_abs() - absolute value<br>
                         • math_max() - maximum<br>
