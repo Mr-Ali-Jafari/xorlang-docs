@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای مشارکت - XorLang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🔥</span>
+                <span class="logo-text">XorLang</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">خانه</a></li>
+                <li><a href="tutorials.html" class="nav-link">آموزش‌ها</a></li>
+                <li><a href="contributing.html" class="nav-link active">مشارکت</a></li>
+                <li><a href="changelog.html" class="nav-link">تغییرات</a></li>
+                <li><a href="about.html" class="nav-link">درباره ما</a></li>
+                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                <span class="gradient-text">راهنمای مشارکت</span>
+                <br>به خانواده XorLang بپیوندید
+            </h1>
+            <p class="hero-subtitle">
+                راهنمای کامل برای مشارکت در توسعه XorLang
+            </p>
+        </div>
+    </section>
+
+    <!-- Getting Started -->
+    <section class="getting-started">
+        <div class="container">
+            <h2 class="section-title">🚀 شروع کنید</h2>
+            
+            <div class="contribution-types">
+                <div class="contribution-card">
+                    <div class="contribution-icon">💻</div>
+                    <h3>توسعه کد</h3>
+                    <p>در کامپایلر، کتابخانه استاندارد یا ابزارها مشارکت کنید</p>
+                    <ul>
+                        <li>رفع باگ‌ها</li>
+                        <li>اضافه کردن ویژگی جدید</li>
+                        <li>بهینه‌سازی عملکرد</li>
+                        <li>بهبود کیفیت کد</li>
+                    </ul>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-icon">📚</div>
+                    <h3>مستندات</h3>
+                    <p>به بهبود و گسترش مستندات کمک کنید</p>
+                    <ul>
+                        <li>نوشتن آموزش‌ها</li>
+                        <li>ترجمه محتوا</li>
+                        <li>اصلاح اشتباهات</li>
+                        <li>اضافه کردن مثال‌ها</li>
+                    </ul>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-icon">🧪</div>
+                    <h3>تست و کیفیت</h3>
+                    <p>در تست و بهبود کیفیت نرم‌افزار مشارکت کنید</p>
+                    <ul>
+                        <li>گزارش باگ‌ها</li>
+                        <li>نوشتن تست‌ها</li>
+                        <li>بررسی کد</li>
+                        <li>تست عملکرد</li>
+                    </ul>
+                </div>
+
+                <div class="contribution-card">
+                    <div class="contribution-icon">🎨</div>
+                    <h3>طراحی و UX</h3>
+                    <p>در بهبود رابط کاربری و تجربه کاربری کمک کنید</p>
+                    <ul>
+                        <li>طراحی وبسایت</li>
+                        <li>بهبود UX</li>
+                        <li>ایجاد لوگو و آیکون</li>
+                        <li>طراحی مواد آموزشی</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Development Setup -->
+    <section class="dev-setup">
+        <div class="container">
+            <h2 class="section-title">⚙️ تنظیم محیط توسعه</h2>
+            
+            <div class="setup-steps">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Fork کردن پروژه</h3>
+                        <p>ابتدا repository را fork کنید:</p>
+                        <pre><code class="language-bash"># Fork کردن از GitHub
+# سپس clone کردن fork شده
+git clone https://github.com/YOUR_USERNAME/xorlang.git
+cd xorlang</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>نصب وابستگی‌ها</h3>
+                        <p>وابستگی‌های لازم را نصب کنید:</p>
+                        <pre><code class="language-bash"># Ubuntu/Debian
+sudo apt-get update
+sudo apt-get install gcc libcurl4-openssl-dev make
+
+# CentOS/RHEL
+sudo yum install gcc libcurl-devel make</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>کامپایل پروژه</h3>
+                        <p>پروژه را کامپایل کنید:</p>
+                        <pre><code class="language-bash"># کامپایل کامپایلر
+make
+
+# تست کردن
+./xorlang examples/hello.xor
+./hello.xor.out</code></pre>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>ایجاد branch جدید</h3>
+                        <p>برای تغییرات خود branch جدید بسازید:</p>
+                        <pre><code class="language-bash"># ایجاد branch جدید
+git checkout -b feature/my-awesome-feature
+
+# یا برای رفع باگ
+git checkout -b bugfix/fix-parser-issue</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Guidelines -->
+    <section class="code-guidelines">
+        <div class="container">
+            <h2 class="section-title">📋 راهنمای کدنویسی</h2>
+            
+            <div class="guidelines-grid">
+                <div class="guideline-card">
+                    <h3>🎯 استایل کد</h3>
+                    <ul>
+                        <li>از 4 space برای indentation استفاده کنید</li>
+                        <li>نام متغیرها و توابع باید واضح باشد</li>
+                        <li>کامنت‌های مفیدی بنویسید</li>
+                        <li>از magic number ها اجتناب کنید</li>
+                    </ul>
+                    <pre><code class="language-c">// خوب ✅
+int calculate_fibonacci(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    return calculate_fibonacci(n-1) + calculate_fibonacci(n-2);
+}
+
+// بد ❌
+int calc(int x) {
+    if (x <= 1) return x;
+    return calc(x-1) + calc(x-2);
+}</code></pre>
+                </div>
+
+                <div class="guideline-card">
+                    <h3>🔧 ساختار فایل‌ها</h3>
+                    <ul>
+                        <li>Header files در پوشه <code>include/</code></li>
+                        <li>Source files در پوشه <code>src/</code></li>
+                        <li>Test files در پوشه <code>tests/</code></li>
+                        <li>Examples در پوشه <code>examples/</code></li>
+                    </ul>
+                    <pre><code>xorlang/
+├── src/
+│   ├── lexer.c
+│   ├── parser.c
+│   ├── codegen.c
+│   └── main.c
+├── include/
+│   ├── lexer.h
+│   ├── parser.h
+│   └── codegen.h
+├── tests/
+└── examples/</code></pre>
+                </div>
+
+                <div class="guideline-card">
+                    <h3>📝 Commit Messages</h3>
+                    <ul>
+                        <li>از فعل حال استفاده کنید</li>
+                        <li>پیام کوتاه و واضح بنویسید</li>
+                        <li>از conventional commits استفاده کنید</li>
+                    </ul>
+                    <pre><code class="language-bash"># خوب ✅
+git commit -m "feat: add string_contains function"
+git commit -m "fix: resolve parser memory leak"
+git commit -m "docs: update API documentation"
+
+# بد ❌
+git commit -m "fixed stuff"
+git commit -m "update"</code></pre>
+                </div>
+
+                <div class="guideline-card">
+                    <h3>🧪 تست‌ها</h3>
+                    <ul>
+                        <li>هر ویژگی جدید باید تست داشته باشد</li>
+                        <li>تست‌ها باید سریع و قابل اعتماد باشند</li>
+                        <li>از نام‌های واضح برای تست‌ها استفاده کنید</li>
+                    </ul>
+                    <pre><code class="language-c">// مثال تست
+void test_math_sqrt_positive_numbers() {
+    assert(math_sqrt(25) == 5.0);
+    assert(math_sqrt(16) == 4.0);
+    assert(math_sqrt(1) == 1.0);
+}
+
+void test_math_sqrt_zero() {
+    assert(math_sqrt(0) == 0.0);
+}</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pull Request Process -->
+    <section class="pr-process">
+        <div class="container">
+            <h2 class="section-title">🔄 فرآیند Pull Request</h2>
+            
+            <div class="process-timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>آماده‌سازی</h3>
+                        <ul>
+                            <li>مطمئن شوید کد شما کامپایل می‌شود</li>
+                            <li>تمام تست‌ها را اجرا کنید</li>
+                            <li>کد را مطابق راهنما فرمت کنید</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>ایجاد PR</h3>
+                        <ul>
+                            <li>عنوان واضح و مفصل بنویسید</li>
+                            <li>توضیح کاملی از تغییرات ارائه دهید</li>
+                            <li>مراجع مربوطه را لینک کنید</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>بررسی کد</h3>
+                        <ul>
+                            <li>صبر کنید تا کد بررسی شود</li>
+                            <li>به نظرات پاسخ دهید</li>
+                            <li>تغییرات درخواستی را اعمال کنید</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Merge</h3>
+                        <ul>
+                            <li>پس از تایید، PR merge می‌شود</li>
+                            <li>تشکر از مشارکت شما!</li>
+                            <li>نام شما در contributors اضافه می‌شود</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Guidelines -->
+    <section class="community">
+        <div class="container">
+            <h2 class="section-title">🤝 قوانین جامعه</h2>
+            
+            <div class="community-rules">
+                <div class="rule-card">
+                    <h3>🌟 احترام متقابل</h3>
+                    <p>به همه اعضای جامعه با احترام رفتار کنید. تنوع نظرات و تجربیات را قدر بدانید.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h3>🎯 سازندگی</h3>
+                    <p>انتقادات و پیشنهادات خود را به صورت سازنده و مفید ارائه دهید.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h3>🤲 کمک‌رسانی</h3>
+                    <p>به تازه‌واردها کمک کنید و دانش خود را به اشتراک بگذارید.</p>
+                </div>
+
+                <div class="rule-card">
+                    <h3>📚 یادگیری</h3>
+                    <p>همیشه آماده یادگیری چیزهای جدید باشید و از اشتباهات درس بگیرید.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources -->
+    <section class="resources">
+        <div class="container">
+            <h2 class="section-title">📖 منابع مفید</h2>
+            
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <h3>📚 مستندات</h3>
+                    <ul>
+                        <li><a href="api.html">مرجع API</a></li>
+                        <li><a href="tutorials.html">آموزش‌ها</a></li>
+                        <li><a href="examples.html">مثال‌ها</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3>💻 کد</h3>
+                    <ul>
+                        <p>🐙 <strong>GitHub:</strong> <a href="https://github.com/mr-ali-jafari/xorlang" target="_blank">github.com/mr-ali-jafari/xorlang</a></p>
+                        <li><a href="https://github.com/mr-ali-jafari/xorlang.git">Clone Repository</a></li>
+                        <li><a href="https://github.com/mr-ali-jafari/xorlang/issues">Issues</a></li>
+                        <li><a href="https://github.com/mr-ali-jafari/xorlang/pulls">Pull Requests</a></li>
+                    </ul>
+                </div>
+
+                <div class="resource-card">
+                    <h3>💬 ارتباط</h3>
+                    <ul>
+                        <p>📧 <strong>ایمیل:</strong> <a href="mailto:info@xorix.ir">info@xorix.ir</a></p>
+                        <li><a href="#">Discord سرور</a></li>
+                        <li><a href="#">Telegram گروه</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>XorLang</h3>
+                    <p>زبان برنامه‌نویسی مدرن برای توسعه‌دهندگان فارسی‌زبان</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ۲۰۲۴ XorLang - ساخته شده توسط <strong>علی جعفری</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="js/script.js"></script>
+
+    <style>
+        .getting-started {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .contribution-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .contribution-card {
+            background: var(--bg-secondary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--bg-tertiary);
+            text-align: center;
+            transition: var(--transition-normal);
+        }
+
+        .contribution-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .contribution-icon {
+            font-size: var(--font-size-4xl);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .contribution-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-xl);
+        }
+
+        .contribution-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+
+        .contribution-card ul {
+            list-style: none;
+            padding: 0;
+            text-align: right;
+        }
+
+        .contribution-card li {
+            color: var(--text-secondary);
+            padding: var(--spacing-xs) 0;
+        }
+
+        .contribution-card li:before {
+            content: "✓";
+            color: var(--success-color);
+            margin-left: var(--spacing-sm);
+        }
+
+        .dev-setup {
+            background: var(--bg-secondary);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .setup-steps {
+            display: grid;
+            gap: var(--spacing-xl);
+        }
+
+        .step-card {
+            display: flex;
+            gap: var(--spacing-xl);
+            background: var(--bg-primary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--bg-tertiary);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .step-content h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-md);
+            line-height: 1.6;
+        }
+
+        .step-content pre {
+            background: var(--bg-secondary);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            border: 1px solid var(--bg-tertiary);
+            overflow-x: auto;
+        }
+
+        .code-guidelines {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .guidelines-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .guideline-card {
+            background: var(--bg-secondary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--bg-tertiary);
+        }
+
+        .guideline-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
+            font-size: var(--font-size-lg);
+        }
+
+        .guideline-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .guideline-card li {
+            color: var(--text-secondary);
+            padding: var(--spacing-xs) 0;
+            line-height: 1.6;
+        }
+
+        .guideline-card li:before {
+            content: "▶";
+            color: var(--primary-color);
+            margin-left: var(--spacing-sm);
+        }
+
+        .pr-process {
+            background: var(--bg-secondary);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .process-timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: var(--spacing-xl);
+            margin-bottom: var(--spacing-2xl);
+            position: relative;
+        }
+
+        .timeline-item:not(:last-child):after {
+            content: '';
+            position: absolute;
+            right: 29px;
+            top: 60px;
+            width: 2px;
+            height: calc(100% + var(--spacing-xl));
+            background: var(--bg-tertiary);
+        }
+
+        .timeline-marker {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            background: var(--bg-primary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--bg-tertiary);
+            flex: 1;
+        }
+
+        .timeline-content h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-content li {
+            color: var(--text-secondary);
+            padding: var(--spacing-xs) 0;
+            line-height: 1.6;
+        }
+
+        .timeline-content li:before {
+            content: "✓";
+            color: var(--success-color);
+            margin-left: var(--spacing-sm);
+        }
+
+        .community {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .community-rules {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .rule-card {
+            background: var(--bg-secondary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--bg-tertiary);
+            text-align: center;
+        }
+
+        .rule-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .rule-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .resources {
+            background: var(--bg-secondary);
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+        }
+
+        .resource-card {
+            background: var(--bg-primary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--bg-tertiary);
+        }
+
+        .resource-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-lg);
+            font-size: var(--font-size-lg);
+        }
+
+        .resource-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resource-card li {
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .resource-card a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: var(--transition-fast);
+        }
+
+        .resource-card a:hover {
+            color: var(--primary-color);
+        }
+
+        @media (max-width: 768px) {
+            .step-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .timeline-item:after {
+                display: none;
+            }
+
+            .guidelines-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</body>
+</html>

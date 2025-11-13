@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تغییرات و نقشه راه - XorLang</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🔥</span>
+                <span class="logo-text">XorLang</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">خانه</a></li>
+                <li><a href="tutorials.html" class="nav-link">آموزش‌ها</a></li>
+                <li><a href="api.html" class="nav-link">مرجع API</a></li>
+                <li><a href="changelog.html" class="nav-link active">تغییرات</a></li>
+                <li><a href="about.html" class="nav-link">درباره ما</a></li>
+                <li><button id="lang-toggle" class="lang-btn">EN</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero-title">
+                <span class="gradient-text">تغییرات و نقشه راه</span>
+                <br>مسیر توسعه XorLang
+            </h1>
+            <p class="hero-subtitle">
+                تاریخچه تغییرات و برنامه‌های آینده XorLang
+            </p>
+        </div>
+    </section>
+
+    <!-- Content Tabs -->
+    <section class="content-tabs">
+        <div class="container">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="changelog">📋 تغییرات</button>
+                <button class="tab-btn" data-tab="roadmap">🗺️ نقشه راه</button>
+            </div>
+
+            <!-- Changelog Tab -->
+            <div id="changelog" class="tab-content active">
+                <h2 class="section-title">📋 تاریخچه تغییرات</h2>
+                
+                <!-- Version 1.0.0 -->
+                <div class="version-card current">
+                    <div class="version-header">
+                        <h3>نسخه 1.0.0</h3>
+                        <span class="version-date">نوامبر ۲۰۲۴</span>
+                        <span class="version-badge current">فعلی</span>
+                    </div>
+                    <div class="version-content">
+                        <div class="changes-section">
+                            <h4>✨ ویژگی‌های جدید</h4>
+                            <ul>
+                                <li>اولین انتشار رسمی XorLang</li>
+                                <li>کامپایلر کامل با lexer، parser و code generator</li>
+                                <li>کتابخانه استاندارد با 6 ماژول اصلی</li>
+                                <li>سیستم import مدرن با syntax <code>putlib ... from ...</code></li>
+                                <li>پشتیبانی کامل از شبکه (HTTP GET/POST، دانلود فایل)</li>
+                                <li>مدیریت خطا هوشمند</li>
+                                <li>مستندات کامل دوزبانه</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="changes-section">
+                            <h4>📚 ماژول‌های کتابخانه</h4>
+                            <ul>
+                                <li><strong>Math:</strong> توابع ریاضی (sqrt، pow، abs، max، min، random)</li>
+                                <li><strong>String:</strong> پردازش رشته (to_upper، contains، length)</li>
+                                <li><strong>File:</strong> عملیات فایل (read، write، exists، delete)</li>
+                                <li><strong>Time:</strong> مدیریت زمان (now، format، sleep)</li>
+                                <li><strong>System:</strong> تعامل با سیستم (execute، env، exit)</li>
+                                <li><strong>Network:</strong> قابلیت‌های شبکه (http_get، http_post، download، is_online)</li>
+                            </ul>
+                        </div>
+
+                        <div class="changes-section">
+                            <h4>🔧 بهبودها</h4>
+                            <ul>
+                                <li>خروجی کامپایلر رنگی و زیبا</li>
+                                <li>سرکوب هشدارهای کامپایلر C</li>
+                                <li>بهینه‌سازی کد تولیدی</li>
+                                <li>پشتیبانی از آرایه‌ها و تابع ask</li>
+                                <li>مدیریت حافظه بهبود یافته</li>
+                            </ul>
+                        </div>
+
+                        <div class="changes-section">
+                            <h4>📖 مستندات</h4>
+                            <ul>
+                                <li>وبسایت مستندات کامل</li>
+                                <li>آموزش‌های گام به گام</li>
+                                <li>مرجع کامل API</li>
+                                <li>مثال‌های عملی</li>
+                                <li>سوالات متداول</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version 0.9.0 Beta -->
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>نسخه 0.9.0 Beta</h3>
+                        <span class="version-date">اکتبر ۲۰۲۴</span>
+                        <span class="version-badge beta">بتا</span>
+                    </div>
+                    <div class="version-content">
+                        <div class="changes-section">
+                            <h4>✨ ویژگی‌های جدید</h4>
+                            <ul>
+                                <li>سیستم import اولیه</li>
+                                <li>ماژول‌های Math و String</li>
+                                <li>پشتیبانی از توابع کتابخانه</li>
+                                <li>بهبود parser برای چندین statement</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="changes-section">
+                            <h4>🐛 رفع باگ‌ها</h4>
+                            <ul>
+                                <li>مشکل فراخوانی توابع در expressions</li>
+                                <li>مدیریت بهتر حافظه</li>
+                                <li>بهبود type inference</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Version 0.5.0 Alpha -->
+                <div class="version-card">
+                    <div class="version-header">
+                        <h3>نسخه 0.5.0 Alpha</h3>
+                        <span class="version-date">سپتامبر ۲۰۲۴</span>
+                        <span class="version-badge alpha">آلفا</span>
+                    </div>
+                    <div class="version-content">
+                        <div class="changes-section">
+                            <h4>✨ ویژگی‌های جدید</h4>
+                            <ul>
+                                <li>اولین نسخه کاری کامپایلر</li>
+                                <li>Lexer و Parser بنیادی</li>
+                                <li>Code Generator برای C</li>
+                                <li>متغیرها، توابع و حلقه‌ها</li>
+                                <li>شرط‌ها و عملگرها</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Roadmap Tab -->
+            <div id="roadmap" class="tab-content">
+                <h2 class="section-title">🗺️ نقشه راه توسعه</h2>
+                
+                <!-- Q1 2025 -->
+                <div class="roadmap-quarter">
+                    <h3>🌟 سه‌ماهه اول ۲۰۲۵</h3>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-status planned">برنامه‌ریزی شده</div>
+                        <h4>🔧 ابزارهای توسعه</h4>
+                        <ul>
+                            <li>IDE اختصاصی XorLang</li>
+                            <li>Syntax highlighting برای ویرایشگرهای محبوب</li>
+                            <li>Debugger تعاملی</li>
+                            <li>Language Server Protocol</li>
+                        </ul>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-status planned">برنامه‌ریزی شده</div>
+                        <h4>📚 گسترش کتابخانه</h4>
+                        <ul>
+                            <li>ماژول Array (مدیریت آرایه‌های پیشرفته)</li>
+                            <li>ماژول JSON (پردازش JSON)</li>
+                            <li>ماژول Crypto (رمزنگاری و hash)</li>
+                            <li>ماژول Regex (عبارات منظم)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q2 2025 -->
+                <div class="roadmap-quarter">
+                    <h3>🚀 سه‌ماهه دوم ۲۰۲۵</h3>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-status planned">برنامه‌ریزی شده</div>
+                        <h4>🌐 پشتیبانی چندپلتفرمه</h4>
+                        <ul>
+                            <li>پورت به Windows</li>
+                            <li>پورت به macOS</li>
+                            <li>Cross-compilation</li>
+                            <li>Package manager</li>
+                        </ul>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-status planned">برنامه‌ریزی شده</div>
+                        <h4>⚡ بهینه‌سازی عملکرد</h4>
+                        <ul>
+                            <li>بهینه‌سازی کامپایلر</li>
+                            <li>کاهش زمان کامپایل</li>
+                            <li>بهبود کیفیت کد تولیدی</li>
+                            <li>Memory management پیشرفته</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q3 2025 -->
+                <div class="roadmap-quarter">
+                    <h3>📱 سه‌ماهه سوم ۲۰۲۵</h3>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-status planned">برنامه‌ریزی شده</div>
+                        <h4>🎓 پلتفرم آموزشی</h4>
+                        <ul>
+                            <li>دوره‌های آنلاین</li>
+                            <li>تمرین‌های تعاملی</li>
+                            <li>سیستم امتیازدهی</li>
+                            <li>انجمن کاربران</li>
+                        </ul>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-status planned">برنامه‌ریزی شده</div>
+                        <h4>🔌 اکوسیستم</h4>
+                        <ul>
+                            <li>مارکت پلیس پکیج‌ها</li>
+                            <li>Framework های وب</li>
+                            <li>کتابخانه‌های GUI</li>
+                            <li>ابزارهای DevOps</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Q4 2025 -->
+                <div class="roadmap-quarter">
+                    <h3>🎯 سه‌ماهه چهارم ۲۰۲۵</h3>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-status planned">برنامه‌ریزی شده</div>
+                        <h4>🏢 سازمانی</h4>
+                        <ul>
+                            <li>ابزارهای Enterprise</li>
+                            <li>پشتیبانی تجاری</li>
+                            <li>مستندات سازمانی</li>
+                            <li>آموزش‌های تخصصی</li>
+                        </ul>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-status planned">برنامه‌ریزی شده</div>
+                        <h4>🌍 بین‌المللی</h4>
+                        <ul>
+                            <li>ترجمه به زبان‌های دیگر</li>
+                            <li>کنفرانس‌های بین‌المللی</li>
+                            <li>شراکت با دانشگاه‌ها</li>
+                            <li>استانداردسازی</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Long Term -->
+                <div class="roadmap-quarter">
+                    <h3>🔮 بلندمدت (۲۰۲۶+)</h3>
+                    
+                    <div class="roadmap-item">
+                        <div class="roadmap-status future">آینده</div>
+                        <h4>🤖 هوش مصنوعی</h4>
+                        <ul>
+                            <li>Code completion هوشمند</li>
+                            <li>تشخیص خطا خودکار</li>
+                            <li>بهینه‌سازی کد خودکار</li>
+                            <li>مترجم کد از زبان‌های دیگر</li>
+                        </ul>
+                    </div>
+
+                    <div class="roadmap-item">
+                        <div class="roadmap-status future">آینده</div>
+                        <h4>🚀 فناوری‌های نوین</h4>
+                        <ul>
+                            <li>WebAssembly target</li>
+                            <li>GPU computing</li>
+                            <li>Blockchain integration</li>
+                            <li>IoT development</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contribution Section -->
+    <section class="contribution">
+        <div class="container">
+            <h2 class="section-title">🤝 مشارکت در توسعه</h2>
+            <p>می‌خواهید در توسعه XorLang مشارکت کنید؟</p>
+            
+            <div class="contribution-options">
+                <div class="contribution-card">
+                    <h3>💻 توسعه کد</h3>
+                    <p>در کامپایلر، کتابخانه یا ابزارها مشارکت کنید</p>
+                    <a href="https://github.com/username/xorlang" class="btn btn-primary">GitHub</a>
+                </div>
+                
+                <div class="contribution-card">
+                    <h3>📝 مستندات</h3>
+                    <p>به بهبود مستندات و آموزش‌ها کمک کنید</p>
+                    <a href="https://github.com/username/xorlang-docs" class="btn btn-secondary">مستندات</a>
+                </div>
+                
+                <div class="contribution-card">
+                    <h3>🐛 گزارش باگ</h3>
+                    <p>مشکلات و پیشنهادات خود را گزارش دهید</p>
+                    <a href="https://github.com/username/xorlang/issues" class="btn btn-secondary">Issues</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>XorLang</h3>
+                    <p>زبان برنامه‌نویسی مدرن برای توسعه‌دهندگان فارسی‌زبان</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; ۲۰۲۴ XorLang - ساخته شده توسط <strong>علی جعفری</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetTab = button.getAttribute('data-tab');
+                    
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    button.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+    </script>
+
+    <style>
+        .content-tabs {
+            padding: var(--spacing-3xl) 0;
+        }
+
+        .tab-navigation {
+            display: flex;
+            justify-content: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .tab-btn {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid var(--bg-tertiary);
+            padding: var(--spacing-md) var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            font-weight: 500;
+            font-size: var(--font-size-lg);
+        }
+
+        .tab-btn.active,
+        .tab-btn:hover {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .version-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-2xl);
+            margin-bottom: var(--spacing-xl);
+            border: 1px solid var(--bg-tertiary);
+            overflow: hidden;
+        }
+
+        .version-card.current {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+        }
+
+        .version-header {
+            background: var(--bg-primary);
+            padding: var(--spacing-xl);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .version-header h3 {
+            color: var(--text-primary);
+            font-size: var(--font-size-xl);
+            margin: 0;
+        }
+
+        .version-date {
+            color: var(--text-muted);
+            font-size: var(--font-size-sm);
+        }
+
+        .version-badge {
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .version-badge.current {
+            background: var(--success-color);
+            color: white;
+        }
+
+        .version-badge.beta {
+            background: var(--warning-color);
+            color: white;
+        }
+
+        .version-badge.alpha {
+            background: var(--info-color);
+            color: white;
+        }
+
+        .version-content {
+            padding: var(--spacing-xl);
+        }
+
+        .changes-section {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .changes-section h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+            font-size: var(--font-size-lg);
+        }
+
+        .changes-section ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .changes-section li {
+            padding: var(--spacing-sm) 0;
+            color: var(--text-secondary);
+            border-bottom: 1px solid var(--bg-tertiary);
+        }
+
+        .changes-section li:last-child {
+            border-bottom: none;
+        }
+
+        .roadmap-quarter {
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .roadmap-quarter h3 {
+            color: var(--text-primary);
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-xl);
+            text-align: center;
+        }
+
+        .roadmap-item {
+            background: var(--bg-secondary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-xl);
+            margin-bottom: var(--spacing-lg);
+            border: 1px solid var(--bg-tertiary);
+        }
+
+        .roadmap-status {
+            display: inline-block;
+            padding: var(--spacing-xs) var(--spacing-sm);
+            border-radius: var(--radius-full);
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .roadmap-status.planned {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .roadmap-status.future {
+            background: var(--text-muted);
+            color: white;
+        }
+
+        .roadmap-item h4 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .roadmap-item ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .roadmap-item li {
+            padding: var(--spacing-xs) 0;
+            color: var(--text-secondary);
+        }
+
+        .roadmap-item li:before {
+            content: "▶";
+            color: var(--primary-color);
+            margin-left: var(--spacing-sm);
+        }
+
+        .contribution {
+            background: var(--bg-secondary);
+            padding: var(--spacing-3xl) 0;
+            text-align: center;
+        }
+
+        .contribution-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-xl);
+            margin-top: var(--spacing-2xl);
+        }
+
+        .contribution-card {
+            background: var(--bg-primary);
+            padding: var(--spacing-2xl);
+            border-radius: var(--radius-2xl);
+            border: 1px solid var(--bg-tertiary);
+        }
+
+        .contribution-card h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .contribution-card p {
+            color: var(--text-secondary);
+            margin-bottom: var(--spacing-lg);
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .tab-navigation {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .version-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</body>
+</html>

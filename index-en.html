@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XorLang - Modern Programming Language</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body class="en">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🔥</span>
+                <span class="logo-text">XorLang</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="tutorials-en.html" class="nav-link">Tutorials</a></li>
+                <li><a href="api-en.html" class="nav-link">API Reference</a></li>
+                <li><a href="examples-en.html" class="nav-link">Examples</a></li>
+                <li><a href="faq-en.html" class="nav-link">FAQ</a></li>
+                <li><a href="about-en.html" class="nav-link">About</a></li>
+                <li><a href="contributing-en.html" class="nav-link">Contributing</a></li>
+                <li><button id="lang-toggle" class="lang-btn">فا</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">XorLang</span>
+                    <br>Modern Programming Language
+                </h1>
+                <p class="hero-subtitle">
+                    A compiled programming language with Persian-friendly syntax and advanced capabilities
+                </p>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <span>🚀</span> Get Started
+                    </a>
+                    <a href="#docs" class="btn btn-secondary">
+                        <span>📚</span> Documentation
+                    </a>
+                    <a href="https://xorix.ir/donate" target="_blank" class="btn btn-donate">
+                        <span>❤️</span> Donate
+                    </a>
+                </div>
+            </div>
+            <div class="hero-code">
+                <div class="code-window">
+                    <div class="code-header">
+                        <div class="code-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="code-title">hello.xor</span>
+                    </div>
+                    <pre><code class="language-xorlang">bucket name = ask('What is your name? ');
+show('Hello ' + name + '!');
+
+putlib math_sqrt from math;
+bucket result = math_sqrt(25);
+show('Square root of 25 is: ' + result);</code></pre>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Fast Compiler</h3>
+                    <p>Generates optimized C code for fast program execution</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Persian Syntax</h3>
+                    <p>Uses Persian keywords for comfortable programming</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Complete Library</h3>
+                    <p>Math, String, File, Time, System, Network modules</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3>Import System</h3>
+                    <p>Module management with putlib ... from ...</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌐</div>
+                    <h3>Network Capabilities</h3>
+                    <p>HTTP GET/POST, file download, connectivity check</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Error Management</h3>
+                    <p>Safe operations and intelligent error handling</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documentation Section -->
+    <section id="docs" class="docs">
+        <div class="container">
+            <h2 class="section-title">Documentation</h2>
+            <div class="docs-grid">
+                <div class="doc-category">
+                    <h3>🎓 Learning</h3>
+                    <div class="doc-links">
+                        <a href="tutorials-en.html">Step-by-step Tutorials</a>
+                        <a href="examples-en.html">Practical Examples</a>
+                        <a href="api-en.html">Complete API Reference</a>
+                        <a href="faq-en.html">Frequently Asked Questions</a>
+                    </div>
+                </div>
+                <div class="doc-category">
+                    <h3>📚 Standard Library</h3>
+                    <div class="doc-links">
+                        <a href="api-en.html#math">Math Module</a>
+                        <a href="api-en.html#string">String Module</a>
+                        <a href="api-en.html#file">File Module</a>
+                        <a href="api-en.html#time">Time Module</a>
+                        <a href="api-en.html#system">System Module</a>
+                        <a href="api-en.html#network">Network Module</a>
+                    </div>
+                </div>
+                <div class="doc-category">
+                    <h3>🤝 Community & Support</h3>
+                    <div class="doc-links">
+                        <a href="about-en.html">About XorLang</a>
+                        <a href="contributing-en.html">Contributing Guide</a>
+                        <a href="changelog-en.html">Changelog & Roadmap</a>
+                        <a href="troubleshooting-en.html">Troubleshooting</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Examples Section -->
+    <section id="examples" class="examples">
+        <div class="container">
+            <h2 class="section-title">Practical Examples</h2>
+            <div class="examples-tabs">
+                <button class="tab-btn active" data-tab="calculator">Calculator</button>
+                <button class="tab-btn" data-tab="file-manager">File Manager</button>
+                <button class="tab-btn" data-tab="web-request">Web Request</button>
+                <button class="tab-btn" data-tab="array-processing">Array Processing</button>
+            </div>
+            
+            <div class="tab-content active" id="calculator">
+                <pre><code class="language-xorlang">// Simple Calculator
+bucket num1 = ask('Enter first number: ');
+bucket num2 = ask('Enter second number: ');
+
+bucket sum = num1 + num2;
+bucket product = num1 * num2;
+bucket division = safe_divide(num1, num2);
+
+show('Sum: ' + sum);
+show('Product: ' + product);
+show('Division: ' + division);</code></pre>
+            </div>
+
+            <div class="tab-content" id="file-manager">
+                <pre><code class="language-xorlang">// File Management
+putlib file_write, file_read, file_exists from file;
+
+bucket content = 'This is a test file';
+file_write('data.txt', content);
+
+when if (file_exists('data.txt')) {
+    bucket data = file_read('data.txt');
+    show('File content: ' + data);
+} when else {
+    show('File does not exist');
+}</code></pre>
+            </div>
+
+            <div class="tab-content" id="web-request">
+                <pre><code class="language-xorlang">// HTTP Request
+putlib http_get, is_online from networking;
+
+when if (is_online()) {
+    bucket response = http_get('https://api.github.com');
+    show('API Response: ' + response);
+} when else {
+    show('No internet connection');
+}</code></pre>
+            </div>
+
+            <div class="tab-content" id="array-processing">
+                <pre><code class="language-xorlang">// Array Processing
+putlib math_max from math;
+
+bucket numbers[] = [5, 2, 8, 1, 9];
+bucket max_num = numbers[0];
+
+for loop (bucket i = 1; i < 5; i = i + 1) {
+    max_num = math_max(max_num, numbers[i]);
+}
+
+show('Maximum number: ' + max_num);</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <h2 class="section-title">Download & Installation</h2>
+            <div class="download-content">
+                <div class="download-info">
+                    <h3>Install XorLang</h3>
+                    <p>Install XorLang on your Linux system:</p>
+                    
+                    <div class="install-steps">
+                        <div class="step">
+                            <span class="step-number">1</span>
+                            <div class="step-content">
+                                <h4>Install Prerequisites</h4>
+                                <pre><code class="language-bash"># Ubuntu/Debian
+sudo apt-get install gcc libcurl4-openssl-dev
+
+# CentOS/RHEL
+sudo yum install gcc libcurl-devel</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <span class="step-number">2</span>
+                            <div class="step-content">
+                                <h4>Compile XorLang</h4>
+                                <pre><code class="language-bash">cd xorlang
+make</code></pre>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <span class="step-number">3</span>
+                            <div class="step-content">
+                                <h4>Run Programs</h4>
+                                <pre><code class="language-bash">./xorlang program.xor
+./program.xor.out</code></pre>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="download-buttons">
+                    <a href="#" class="btn btn-primary btn-large">
+                        <span>📦</span> Download XorLang
+                    </a>
+                    <p class="version-info">Version 1.0 - Linux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>XorLang</h3>
+                    <p>Modern programming language for Persian developers</p>
+                    <div class="social-links">
+                        <a href="https://xorix.ir/donate" target="_blank" class="social-link donate">
+                            <span>❤️</span> Support Us
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Learning</h4>
+                    <ul>
+                        <li><a href="tutorials-en.html">Tutorials</a></li>
+                        <li><a href="examples-en.html">Examples</a></li>
+                        <li><a href="api-en.html">API Reference</a></li>
+                        <li><a href="faq-en.html">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="about-en.html">About</a></li>
+                        <li><a href="contributing-en.html">Contributing</a></li>
+                        <li><a href="changelog-en.html">Changelog</a></li>
+                        <li><a href="troubleshooting-en.html">Troubleshooting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="sitemap-en.html">Sitemap</a></li>
+                        <li><a href="https://github.com/mr-ali-jafari/xorlang" target="_blank">GitHub</a></li>
+                        <li><a href="https://xorix.ir/donate" target="_blank">Donate</a></li>
+                        <li><a href="index.html">فارسی</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 XorLang - Created by <strong>Ali Jafari</strong></p>
+                <p>Released under MIT License</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
